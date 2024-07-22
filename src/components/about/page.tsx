@@ -5,7 +5,7 @@ export default function About() {
     <>
       <div className="h-auto flex flex-row justify-center items-center bg-white">
         <div className="flex flex-col justify-center items-center w-1/2 p-10">
-          <h1 className="text-4xl font-bold text-secondary mb-4">ABOUT US</h1>
+          <h1 className="text-4xl font-bold text-black mb-4 text-left w-4/5">ABOUT US</h1>
           <hr className="w-3/4 border-1 border-black mb-4" />
           <p className="text-1xl text-black w-4/5">
             The ACM UCSC is the student chapter of the Association for Computing

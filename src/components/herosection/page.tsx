@@ -5,9 +5,9 @@ import ACMLogo from "../../../public/assets/images/acm-logo-white.png";
 export default function Hero() {
   return (
     <>
-      <div className="relative min-h-screen flex flex-col items-center justify-between p-24 overflow-hidden">
+      <div className="relative min-h-screen flex flex-col items-center justify-between p-24 overflow-hidden pb-40">
         <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1] mt-6 mb-4"
           autoPlay
           loop
           muted
@@ -25,13 +25,13 @@ export default function Hero() {
               <Image src={UCSCLogo} alt="UCSC Logo" height={175} width={175} />
             </div>
           </div>
-          <h1 className="text-8xl text-white text-center mt-10 fire-animation">
+          <h1 className="text-8xl text-white text-center mt-10 fire-animation shadow-md">
             <b>Welcome to ACM UCSC</b>
           </h1>
           <h1 className="text-2xl text-secondary text-center mt-4 fire-animation">
             <b>Association for Computing Machinery Student Chapter</b>
           </h1>
-          <h1 className="text-2xl text-secondary text-white text-center fire-animation">
+          <h1 className="text-2xl text-secondary text-center fire-animation">
             <b>University of Colombo School of Computing</b>
           </h1>
         </main>
