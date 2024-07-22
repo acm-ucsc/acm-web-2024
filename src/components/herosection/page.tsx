@@ -33,8 +33,8 @@ export default function Hero() {
               <Image src={UCSCLogo} alt="UCSC Logo" height={175} width={175} />
             </div>
           </div>
-          <h1 className="text-8xl text-white text-center mt-10 fire-animation shadow-md">
-            <b>Welcome to ACM UCSC</b>
+          <h1 className="text-6xl text-white text-center mt-10 fire-animation shadow-md">
+            <b>UCSC ACM Student Chapter</b>
           </h1>
           <h1 className="text-2xl text-secondary text-center mt-4 fire-animation">
             <b>Association for Computing Machinery Student Chapter</b>
