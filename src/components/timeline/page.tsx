@@ -69,7 +69,7 @@ export default function Timeline() {
                 }`}
               >
                 <motion.div
-                  className="bg-black p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105"
+                  className="bg-black p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.8 }}

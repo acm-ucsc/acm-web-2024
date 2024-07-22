@@ -126,7 +126,7 @@ export default function ExecutiveCommittee() {
           {facultyAdvisorAndSponsor.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center transition-transform transform hover:scale-105 m-4 min-w-[250px] min-h-[280px]"
+              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  transform hover:scale-105 m-4 min-w-[250px] min-h-[280px] cursor-pointer"
             >
               <Image
                 src={member.picture}
@@ -191,7 +191,7 @@ export default function ExecutiveCommittee() {
           {committeeMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center transition-transform transform hover:scale-105 min-w-[250px] min-h-[280px]"
+              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  hover:scale-105 min-w-[250px] min-h-[280px] cursor-pointer"
             >
               <Image
                 src={member.picture}
