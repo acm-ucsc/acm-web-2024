@@ -58,7 +58,7 @@ export default function Contact() {
             {contactPerson.map((person, index) => (
               <div
                 key={index}
-                className="flex flex-col w-full justify-center items-center transform transition duration-500 cursor-pointer p-4"
+                className="flex flex-col w-full justify-center items-center transform transition duration-500 cursor-pointer p-4 mb-2"
               >
                 <h1 className="text-1xl font-bold text-secondary text-center w-full">
                   {person.name}
@@ -69,7 +69,6 @@ export default function Contact() {
                 <p className="text-base text-white text-center w-full">
                   {person.email}
                 </p>
-                <hr className="w-3/4 border-1 border-secondary my-4" />
               </div>
             ))}
           </div>

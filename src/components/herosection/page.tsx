@@ -34,7 +34,7 @@ export default function Hero() {
             </div>
           </div>
           <h1 className="text-6xl text-white text-center mt-10 fire-animation shadow-md">
-            <b>UCSC ACM Student Chapter</b>
+            <b>ACM Student Chapter - UCSC</b>
           </h1>
           <h1 className="text-2xl text-secondary text-center mt-4 fire-animation">
             <b>Association for Computing Machinery Student Chapter</b>
