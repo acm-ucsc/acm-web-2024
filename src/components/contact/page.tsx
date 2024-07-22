@@ -29,7 +29,7 @@ export default function Contact() {
 
         <div className="w-full flex flex-row justify-center items-center gap-8">
           <div className="flex flex-col w-1/3 h-[450px] justify-center items-center bg-black rounded-lg p-10">
-            <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-left">
+            <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-center">
               <b>Let`s Get In Touch</b>
             </h1>
             <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
