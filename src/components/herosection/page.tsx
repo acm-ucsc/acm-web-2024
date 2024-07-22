@@ -1,6 +1,14 @@
 import Image from "next/image";
 import UCSCLogo from "../../../public/assets/images/ucsc-logo.png";
 import ACMLogo from "../../../public/assets/images/acm-logo-white.png";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaYoutube,
+  FaGithub,
+} from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -34,6 +42,26 @@ export default function Hero() {
           <h1 className="text-2xl text-secondary text-center fire-animation">
             <b>University of Colombo School of Computing</b>
           </h1>
+          <div className="flex flex-row items-center justify-center mt-10">
+            <a href="https://facebook.com" className="text-white mx-2">
+              <FaFacebookF size={20} />
+            </a>
+            <a href="https://twitter.com" className="text-white mx-2">
+              <FaTwitter size={20} />
+            </a>
+            <a href="https://linkedin.com" className="text-white mx-2">
+              <FaLinkedinIn size={20} />
+            </a>
+            <a href="https://instagram.com" className="text-white mx-2">
+              <FaInstagram size={20} />
+            </a>
+            <a href="https://youtube.com" className="text-white mx-2">
+              <FaYoutube size={20} />
+            </a>
+            <a href="https://github.com" className="text-white mx-2">
+              <FaGithub size={20} />
+            </a>
+          </div>
         </main>
       </div>
     </>

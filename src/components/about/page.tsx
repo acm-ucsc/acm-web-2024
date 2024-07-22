@@ -3,10 +3,11 @@ import AboutImages from "../aboutImages/page";
 export default function About() {
   return (
     <>
-      <div className="h-auto flex flex-row justify-center items-center bg-white">
+      <div className="h-auto flex flex-row justify-center items-center bg-secondary py-10">
         <div className="flex flex-col justify-center items-center w-1/2 p-10">
-          <h1 className="text-4xl font-bold text-black mb-4 text-left w-4/5">ABOUT US</h1>
-          <hr className="w-3/4 border-1 border-black mb-4" />
+          <h1 className="text-4xl font-bold text-black mb-4 text-left w-4/5">
+            ABOUT US
+          </h1>
           <p className="text-1xl text-black w-4/5">
             The ACM UCSC is the student chapter of the Association for Computing
             Machinery at the University of Colombo School of Computing.
@@ -30,7 +31,7 @@ export default function About() {
           </p>
         </div>
         <div className="flex flex-col justify-center items-center w-1/2 p-24">
-            <AboutImages />
+          <AboutImages />
         </div>
       </div>
     </>
