@@ -1,11 +1,13 @@
+"use client";
+import AboutImages from "../aboutImages/page";
 export default function About() {
   return (
     <>
-      <div className="h-screen flex flex-row justify-center items-center bg-white">
+      <div className="h-auto flex flex-row justify-center items-center bg-white">
         <div className="flex flex-col justify-center items-center w-1/2 p-10">
-          <h1 className="text-4xl font-bold text-black mb-4">ABOUT US</h1>
+          <h1 className="text-4xl font-bold text-secondary mb-4">ABOUT US</h1>
           <hr className="w-3/4 border-1 border-black mb-4" />
-          <p className="text-1xl text-black w-3/4">
+          <p className="text-1xl text-black w-4/5">
             The ACM UCSC is the student chapter of the Association for Computing
             Machinery at the University of Colombo School of Computing.
             Comprised of tech-savvy students, our group is dedicated to
@@ -17,7 +19,7 @@ export default function About() {
             to connect with industry professionals, keeping them updated on the
             latest technological trends.
           </p>
-          <p className="text-1xl text-black mt-4 w-3/4">
+          <p className="text-1xl text-black mt-4 w-4/5">
             Engaging with our chapter not only advances technological expertise
             but also hones essential personal development skills. By
             participating in our activities, students can develop
@@ -27,7 +29,9 @@ export default function About() {
             growth.
           </p>
         </div>
-        <div className="flex flex-col justify-center items-center w-1/2"></div>
+        <div className="flex flex-col justify-center items-center w-1/2 p-24">
+            <AboutImages />
+        </div>
       </div>
     </>
   );
