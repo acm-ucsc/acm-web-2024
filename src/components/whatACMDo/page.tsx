@@ -40,9 +40,9 @@ export default function WhatACMDo() {
           {activities.map((activity, index) => (
             <div
               key={index}
-              className="flex flex-col justify-center items-center w-full sm:w-1/4 bg-secondary p-6 m-4 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[200px]"
+              className="flex flex-col justify-center items-center w-full sm:w-1/4 bg-gray-800  p-6 m-4 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[200px] cursor-pointer"
             >
-              <h1 className="text-2xl font-bold text-black mb-4 text-center">
+              <h1 className="text-2xl font-bold text-secondary mb-4 text-center">
                 {activity.title}
               </h1>
               <p className="text-base text-white text-center">
