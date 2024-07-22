@@ -21,7 +21,7 @@ export default function Hero() {
           <h1 className="text-2xl text-secondary text-center mt-4">
             <b>Association for Computing Machinary Student Chapter</b>
           </h1>
-          <h1 className="text-2xl text-white text-white text-center">
+          <h1 className="text-2xl text-secondary text-white text-center">
             <b>University of Colombo School of Computing</b>
           </h1>
         </main>{" "}
