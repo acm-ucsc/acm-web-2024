@@ -27,10 +27,10 @@ export default function Hero() {
         <main className="flex flex-col items-center justify-center h-auto p-24 relative z-10">
           <div className="flex flex-row items-center justify-center">
             <div className="w-1/2 flex flex-col items-center justify-center">
-              <Image src={ACMLogo} alt="ACM Logo" height={500} width={500} />
+              <Image src={UCSCLogo} alt="UCSC Logo" height={175} width={175} />
             </div>
             <div className="w-1/2 flex flex-col items-center justify-center">
-              <Image src={UCSCLogo} alt="UCSC Logo" height={175} width={175} />
+              <Image src={ACMLogo} alt="ACM Logo" height={500} width={500} />
             </div>
           </div>
           <h1 className="text-6xl text-white text-center mt-10 fire-animation shadow-md">

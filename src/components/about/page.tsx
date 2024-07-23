@@ -30,7 +30,7 @@ export default function About() {
             growth.
           </p>
         </div>
-        <div className="flex flex-col justify-center items-center w-1/2 p-24">
+        <div className="flex flex-col justify-center items-center w-1/2 p-10 pr-20">
           <AboutImages />
         </div>
       </div>
