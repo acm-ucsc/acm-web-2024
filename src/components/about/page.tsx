@@ -3,7 +3,7 @@ import AboutImages from "../aboutImages/page";
 export default function About() {
   return (
     <>
-      <div className="h-auto flex flex-row justify-center items-center bg-black py-10">
+      <div className="h-auto flex flex-row justify-center items-center py-10">
         <div className="flex flex-col justify-center items-center w-1/2 p-10">
           <h1 className="text-4xl font-bold text-white mb-4 text-left w-4/5">
             ABOUT US
