@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-6 px-6 flex flex-col justify-center items-center">
+    <footer className="bg-black text-white py-6 px-6 flex flex-col justify-center items-center border-t border-gray-800">
       <div className="container mx-auto flex flex-col justify-center items-center w-full p-10">
         <Image src={logo} alt="ACM Logo" width={200} height={200} />
         <div className="flex flex-col justify-center items-center md:items-start md:ml-10 mt-4 md:mt-0">

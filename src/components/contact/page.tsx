@@ -22,8 +22,8 @@ const contactPerson = [
 export default function Contact() {
   return (
     <>
-      <div className="py-16 bg-secondary text-white">
-        <h1 className="text-4xl sm:text-5xl font-bold text-black text-center mb-12">
+      <div className="py-16 bg-black text-white">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-12">
           Contact Us
         </h1>
 
@@ -42,12 +42,12 @@ export default function Contact() {
               ACM UCSC, University of Colombo School of Computing, 35, Reid
               Avenue, Colombo 7.
             </p>
-            <p className="text-base text-white mb-4 flex items-center gap-2">
-              <FaEnvelope className="w-6 h-6 text-secondary m-2 p-1" />
+            <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
+              <FaEnvelope className="w-6 h-6 text-secondary m-2 pr-2" />
               acmucsc@gmail.com
             </p>
-            <p className="text-base text-white mb-4 flex items-center gap-2">
-              <FaPhoneAlt className="w-6 h-6 text-secondary m-2 p-1" />
+            <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
+              <FaPhoneAlt className="w-6 h-6 text-secondary m-2 pr-2" />
               +94 77 123 4567
             </p>
           </div>
