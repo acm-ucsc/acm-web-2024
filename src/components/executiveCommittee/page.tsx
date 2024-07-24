@@ -117,7 +117,7 @@ const committeeMembers = [
 
 export default function ExecutiveCommittee() {
   return (
-    <div className="py-16 bg-black">
+    <div className="py-16">
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
         Faculty Sponsor and Advisor
       </h1>

@@ -22,13 +22,13 @@ const contactPerson = [
 export default function Contact() {
   return (
     <>
-      <div className="py-16 bg-secondary text-white">
-        <h1 className="text-4xl sm:text-5xl font-bold text-black text-center mb-12">
+      <div className="py-16 text-white">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-12">
           Contact Us
         </h1>
 
         <div className="w-full flex flex-row justify-center items-center gap-8">
-          <div className="flex flex-col w-1/3 h-[450px] justify-center items-center bg-black rounded-lg p-10">
+          <div className="flex flex-col w-1/3 h-[450px] justify-center items-center rounded-lg p-10">
             <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-center">
               <b>Let`s Get In Touch</b>
             </h1>
@@ -42,16 +42,16 @@ export default function Contact() {
               ACM UCSC, University of Colombo School of Computing, 35, Reid
               Avenue, Colombo 7.
             </p>
-            <p className="text-base text-white mb-4 flex items-center gap-2">
-              <FaEnvelope className="w-6 h-6 text-secondary m-2 p-1" />
+            <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
+              <FaEnvelope className="w-6 h-6 text-secondary m-2 pr-2" />
               acmucsc@gmail.com
             </p>
-            <p className="text-base text-white mb-4 flex items-center gap-2">
-              <FaPhoneAlt className="w-6 h-6 text-secondary m-2 p-1" />
+            <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
+              <FaPhoneAlt className="w-6 h-6 text-secondary m-2 pr-2" />
               +94 77 123 4567
             </p>
           </div>
-          <div className="flex flex-col w-1/3 h-[450px] justify-center items-center bg-black rounded-lg p-10">
+          <div className="flex flex-col w-1/3 h-[450px] justify-center items-center rounded-lg p-10">
             {/* <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-left">
               <b>Contact Us</b>
             </h1> */}

@@ -44,12 +44,12 @@ export default function Timeline() {
   }, [controls]);
 
   return (
-    <div className="flex flex-col items-center py-16 bg-secondary">
-      <h1 className="text-4xl sm:text-5xl font-bold text-black mb-8 text-center w-full max-w-3xl mb-4">
+    <div className="flex flex-col items-center py-16">
+      <h1 className="text-4xl sm:text-5xl font-bold text-white mb-8 text-center w-full max-w-3xl mb-4">
         2024 Timeline
       </h1>
       <div className="relative w-full max-w-5xl">
-        <div className="border-l-2 border-black absolute h-full left-1/2 transform -translate-x-1/2"></div>
+        <div className="border-l-2 border-secondary absolute h-full left-1/2 transform -translate-x-1/2"></div>
         <div className="flex flex-col items-center">
           {timelineEvents.map((event, index) => (
             <motion.div
@@ -69,7 +69,7 @@ export default function Timeline() {
                 }`}
               >
                 <motion.div
-                  className="bg-black p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer"
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.8 }}

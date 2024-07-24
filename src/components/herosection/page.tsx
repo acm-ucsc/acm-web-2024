@@ -14,16 +14,6 @@ export default function Hero() {
   return (
     <>
       <div className="relative min-h-screen flex flex-col items-center justify-between p-24 overflow-hidden pb-40">
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1] mt-6 mb-4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/assets/videos/backgroundmp4.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
         <main className="flex flex-col items-center justify-center h-auto p-24 relative z-10">
           <div className="flex flex-row items-center justify-center">
             <div className="w-1/2 flex flex-col items-center justify-center">
