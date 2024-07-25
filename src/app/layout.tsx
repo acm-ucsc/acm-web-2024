@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: "UCSC ACM Student Chapter",
   description: "The official website of the UCSC ACM Student Chapter.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
