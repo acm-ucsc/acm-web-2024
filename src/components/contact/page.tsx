@@ -23,13 +23,13 @@ export default function Contact() {
   return (
     <>
       <div className="py-16 text-white">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-12">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-12  bg-black">
           Contact Us
         </h1>
 
         <div className="w-full flex flex-row justify-center items-center gap-8">
           <div className="flex flex-col w-1/3 h-[450px] justify-center items-center rounded-lg p-10">
-            <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-center">
+            <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-left">
               <b>Let`s Get In Touch</b>
             </h1>
             <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
@@ -60,13 +60,13 @@ export default function Contact() {
                 key={index}
                 className="flex flex-col w-full justify-center items-center transform transition duration-500 cursor-pointer p-4 mb-2"
               >
-                <h1 className="text-1xl font-bold text-secondary text-center w-full">
+                <h1 className="text-1xl font-bold text-secondary text-right w-full">
                   {person.name}
                 </h1>
-                <p className="text-base text-white text-center w-full">
+                <p className="text-base text-white text-right w-full">
                   {person.position}
                 </p>
-                <p className="text-base text-white text-center w-full">
+                <p className="text-base text-white text-right w-full">
                   {person.email}
                 </p>
               </div>

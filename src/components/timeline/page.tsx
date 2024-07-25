@@ -44,7 +44,7 @@ export default function Timeline() {
   }, [controls]);
 
   return (
-    <div className="flex flex-col items-center py-16">
+    <div className="flex flex-col items-center py-16  bg-black">
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-8 text-center w-full max-w-3xl mb-4">
         2024 Timeline
       </h1>

@@ -19,16 +19,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <video
-          className="fixed top-0 left-0 w-full h-full object-cover z-[-1] mt-3 mb-4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/assets/videos/backgroundmp4.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
         {children}
       </body>
     </html>
