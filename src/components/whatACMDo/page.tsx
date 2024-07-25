@@ -32,7 +32,7 @@ const activities = [
 export default function WhatACMDo() {
   return (
     <>
-      <div className="min-h-[750px] w-full flex flex-col justify-center items-center py-16 px-4">
+      <div className="min-h-[750px] w-full flex flex-col justify-center items-center py-16 px-4 bg-primary">
         <h1 className="text-4xl sm:text-5xl font-bold text-white mb-8 text-center w-full max-w-3xl">
           WHAT ACM UCSC DO
         </h1>

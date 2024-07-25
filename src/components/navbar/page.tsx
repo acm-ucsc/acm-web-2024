@@ -9,7 +9,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex flex-row items-center justify-between p-4 shadow-lg h-[60px] p-10">
+    <div className="fixed top-0 left-0 right-0 z-50 flex flex-row items-center justify-between shadow-lg h-[60px] p-10">
       <div className="text-xl font-bold">
         <Image src={logo} alt="ACM UCSC" height={100} width={100}></Image>
       </div>
@@ -18,7 +18,7 @@ export default function Navbar() {
           <a
             key={link.href}
             href={link.href}
-            className="text-white hover:text-secondary transition duration-300"
+            className="text-secondary hover:text-white transition duration-300"
           >
             <b>{link.label}</b>
           </a>
