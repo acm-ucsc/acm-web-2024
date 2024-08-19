@@ -3,52 +3,62 @@ import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
+import img1 from "../../../public/assets/images/events/6.jpeg";
+import img2 from "../../../public/assets/images/events/7.jpeg";
+import img3 from "../../../public/assets/images/events/12.jpeg";
+import img4 from "../../../public/assets/images/events/13.jpeg";
+import img5 from "../../../public/assets/images/events/14.jpeg";
+import img6 from "../../../public/assets/images/events/16.jpeg";
+import img7 from "../../../public/assets/images/events/18.jpeg";
+import img8 from "../../../public/assets/images/events/19.jpeg";
+import img9 from "../../../public/assets/images/events/20.jpeg";
+
 // Define your image data array directly in this file
 const imageData = [
   {
-    src: "/assets/images/events/6.jpeg",
+    src: img1,
     name: "SigCHI Winter School 2024",
     description:
       "The ACM SIGCHI Winter School 2024 was a unique opportunity for students to learn HCI from the best in the field.",
   },
   {
-    src: "/assets/images/events/7.jpeg",
+    src: img2,
     name: "IOI 2023",
     description: "1 bronze medal",
   },
   {
-    src: "/assets/images/events/12.jpeg",
+    src: img3,
     name: "Winter School OC",
     description: "",
   },
   {
-    src: "/assets/images/events/13.jpeg",
+    src: img4,
     name: "Ballet Code",
     description: "",
   },
   {
-    src: "/assets/images/events/14.jpeg",
+    src: img5,
     name: "Annual Genaral Meeting 2023",
     description: "",
   },
   {
-    src: "/assets/images/events/16.jpeg",
+    src: img6,
     name: "Postman API Day",
     description:
       "The Postman API Day was a huge success with over 150 participants.",
   },
   {
-    src: "/assets/images/events/18.jpeg",
+    src: img7,
     name: "Postman API Day",
     description: "",
   },
   {
-    src: "/assets/images/events/19.jpeg",
+    src: img8,
     name: "Twillio Session",
     description: "",
   },
   {
-    src: "/assets/images/events/20.jpeg",
+    src: img9,
     name: "NOI 2023 ",
     description: "NOI 2023 OC",
   },

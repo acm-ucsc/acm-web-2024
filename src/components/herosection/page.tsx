@@ -21,7 +21,10 @@ export default function Hero() {
           muted
           playsInline
         >
-          <source src="/assets/videos/background.mp4" type="video/mp4" />
+          <source
+            src="../../../public/assets/videos/background.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
         <main className="flex flex-col items-center justify-center h-auto p-24 relative z-10">
