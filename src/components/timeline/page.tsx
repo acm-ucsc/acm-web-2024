@@ -2,7 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { FaCalendarAlt, FaStar, FaBolt, FaRocket, FaCode } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaStar,
+  FaBolt,
+  FaRocket,
+  FaCode,
+} from "react-icons/fa";
 
 const timelineEvents = [
   {
