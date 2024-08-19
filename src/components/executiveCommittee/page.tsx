@@ -1,5 +1,7 @@
 "use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Samudi from "../../../public/assets/images/team/Samudi.jpg";
 import Sineth from "../../../public/assets/images/team/Sineth.jpg";
 import Dasun from "../../../public/assets/images/team/Dasun.jpg";
@@ -84,7 +86,7 @@ const committeeMembers = [
   },
   {
     name: "Ravindu Hasanka",
-    position: "Treshurer",
+    position: "Treasurer",
     picture: Ravindu,
     social: {
       facebook: "https://facebook.com/janesmith",
@@ -117,6 +119,11 @@ const committeeMembers = [
   },
 ];
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 }, // Initial state with scale
+  visible: { opacity: 1, y: 0, scale: 1.1, transition: { duration: 0.6 } }, // Animated state with scale
+};
+
 export default function ExecutiveCommittee() {
   return (
     <div className="py-16 bg-black">
@@ -126,9 +133,13 @@ export default function ExecutiveCommittee() {
       <div className="w-full flex flex-col justify-center items-center mb-12">
         <div className="flex flex-wrap justify-center px-4 w-3/4 mx-auto">
           {facultyAdvisorAndSponsor.map((member, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  transform  m-4 min-w-[250px] min-h-[280px] cursor-pointer"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer m-6 min-w-[250px] min-h-[280px]"
+              variants={itemVariants}
+              whileInView="visible" // Trigger animation when the component is in view
+              initial="hidden"
+              viewport={{ once: true, amount: 0.2 }} // Adjusted viewport settings
             >
               <Image
                 src={member.picture}
@@ -181,7 +192,7 @@ export default function ExecutiveCommittee() {
                   </a>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -191,9 +202,13 @@ export default function ExecutiveCommittee() {
       <div className="w-full flex flex-col justify-center items-center mb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 w-4/5">
           {committeeMembers.map((member, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  transform  m-4 min-w-[250px] min-h-[280px] cursor-pointer"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer m-4 min-w-[250px] min-h-[280px]"
+              variants={itemVariants}
+              whileInView="visible" // Trigger animation when the component is in view
+              initial="hidden"
+              viewport={{ once: true, amount: 0.2 }} // Adjusted viewport settings
             >
               <Image
                 src={member.picture}
@@ -246,7 +261,7 @@ export default function ExecutiveCommittee() {
                   </a>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
