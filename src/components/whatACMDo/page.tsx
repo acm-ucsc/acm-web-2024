@@ -1,5 +1,8 @@
 "use client";
+import { motion, useAnimation } from "framer-motion";
+import { ReactElement, useEffect, useRef } from "react";
 
+// Define the activities array
 const activities = [
   {
     title: "EVENTS",
@@ -26,32 +29,80 @@ const activities = [
     description:
       "We organize seminars on various topics related to computing and technology, bringing in experts to share their knowledge and insights.",
   },
-  
 ];
 
-export default function WhatACMDo() {
+export default function WhatACMDo(): ReactElement {
   return (
-    <>
-      <div className="min-h-[750px] w-full flex flex-col justify-center items-center py-16 px-4 bg-black">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-8 text-center w-full max-w-3xl">
-          WHAT ACM UCSC DO
-        </h1>
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center w-full gap-8">
-          {activities.map((activity, index) => (
-            <div
-              key={index}
-              className="flex flex-col justify-center items-center w-full sm:w-1/4 bg-gray-800  p-6 m-4 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 min-h-[200px] cursor-pointer"
-            >
-              <h1 className="text-2xl font-bold text-secondary mb-4 text-center">
-                {activity.title}
-              </h1>
-              <p className="text-base text-white text-center">
-                {activity.description}
-              </p>
-            </div>
-          ))}
-        </div>
+    <div className="min-h-[750px] w-full bg-black py-16 px-4">
+      <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center w-full max-w-4xl mx-auto">
+        WHAT ACM UCSC DO
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {activities.map((activity, index) => (
+          <FadeInSlideUp key={index} index={index} activity={activity} />
+        ))}
       </div>
-    </>
+    </div>
   );
 }
+
+interface Activity {
+  title: string;
+  description: string;
+}
+
+interface FadeInSlideUpProps {
+  index: number;
+  activity: Activity;
+}
+
+const FadeInSlideUp = ({
+  index,
+  activity,
+}: FadeInSlideUpProps): ReactElement => {
+  const ref = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({ opacity: 1, y: 0 });
+        } else {
+          controls.start({ opacity: 0, y: 50 });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [controls]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="relative bg-gray-800 p-6 rounded-lg shadow-lg cursor-pointer overflow-hidden transform transition duration-500 hover:scale-105"
+    >
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
+      <div className="relative z-10">
+        <h1 className="text-2xl font-bold text-secondary mb-4 text-center">
+          {activity.title}
+        </h1>
+        <p className="text-base text-white text-center">
+          {activity.description}
+        </p>
+      </div>
+    </motion.div>
+  );
+};

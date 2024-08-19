@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 // Define your image data array directly in this file
 const imageData = [
@@ -11,8 +14,7 @@ const imageData = [
   {
     src: "/assets/images/events/7.jpeg",
     name: "IOI 2023",
-    description:
-      "1 bronze medal",
+    description: "1 bronze medal",
   },
   {
     src: "/assets/images/events/12.jpeg",
@@ -53,11 +55,34 @@ const imageData = [
 ];
 
 export default function AboutImages() {
+  const controls = useAnimation();
+
+  // Function to handle scroll animation
+  const handleScroll = () => {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        controls.start({ opacity: 1, y: 0 });
+      } else {
+        controls.start({ opacity: 0, y: 50 });
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger scroll handler on component mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
+
   return (
     <div className="p-6 bg-black">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {imageData.map((item, index) => (
-          <div
+          <motion.div
             key={index}
             className={`relative overflow-hidden rounded-lg shadow-lg group transition-transform duration-500 ${
               index % 5 === 0
@@ -65,7 +90,10 @@ export default function AboutImages() {
                 : index % 4 === 0
                 ? "col-span-1 row-span-2"
                 : "col-span-1 row-span-1"
-            }`}
+            } animate-on-scroll`}
+            initial={{ opacity: 0, y: 50 }}
+            animate={controls}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
           >
             <Image
               src={item.src}
@@ -80,7 +108,7 @@ export default function AboutImages() {
                 <p className="text-sm">{item.description}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

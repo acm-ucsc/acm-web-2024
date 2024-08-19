@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const contactPerson = [
   {
@@ -19,6 +21,12 @@ const contactPerson = [
   },
 ];
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 }, // Initial state with scale
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6 } }, // Animated state with scale
+  exit: { opacity: 0, y: 50, scale: 0.9, transition: { duration: 0.6 } }, // Exit state with scale
+};
+
 export default function Contact() {
   return (
     <div className="py-16 bg-black text-white">
@@ -27,7 +35,14 @@ export default function Contact() {
       </h1>
       <div className="flex flex-col justify-center items-center w-full">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-8 px-4 w-4/5">
-          <div className="flex flex-col w-full sm:w-1/3 h-auto bg-gray-700 rounded-lg p-8 shadow-lg transform transition duration-500 hover:bg-gray-600">
+          <motion.div
+            className="flex flex-col w-full sm:w-1/3 h-auto bg-gray-700 rounded-lg p-8 shadow-lg transform transition duration-500 hover:bg-gray-600"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            exit="exit"
+            viewport={{ once: true, amount: 0.2 }} // Adjusted viewport settings
+          >
             <h2 className="text-2xl font-bold text-secondary mb-4">
               Let’s Get In Touch
             </h2>
@@ -49,20 +64,25 @@ export default function Contact() {
               <FaPhoneAlt className="w-3 h-3 text-secondary" />
               +94 77 123 4567
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col w-full sm:w-2/3 gap-6">
+          <div className="flex flex-col w-3/4 sm:w-2/3 gap-6">
             {contactPerson.map((person, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-gray-800 rounded-lg p-6 shadow-md transform transition duration-500 hover:bg-gray-700 flex flex-col items-start"
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                exit="exit"
+                viewport={{ once: true, amount: 0.2 }} // Adjusted viewport settings
               >
                 <h2 className="text-xl font-bold text-secondary mb-2">
                   {person.name}
                 </h2>
                 <p className="text-base text-white mb-1">{person.position}</p>
                 <p className="text-base text-white">{person.email}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
