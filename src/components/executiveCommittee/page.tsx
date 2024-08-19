@@ -7,6 +7,8 @@ import Vihanga from "../../../public/assets/images/team/Vihanga.jpg";
 import Ravindu from "../../../public/assets/images/team/Ravindu.jpg";
 import Gayandee from "../../../public/assets/images/team/Gayandee.jpg";
 import Kasun from "../../../public/assets/images/team/Kasun.jpg";
+import SandaruwanSir from "../../../public/assets/images/team/Dr. Sanadaruwan.png";
+import AjanthaSir from "../../../public/assets/images/team/Dr.-Ajantha Athukorale.jpg";
 
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
@@ -14,7 +16,7 @@ const facultyAdvisorAndSponsor = [
   {
     name: "Dr. Ajantha Atukorale",
     position: "Faculty Sponsor",
-    picture: Samudi,
+    picture: AjanthaSir,
     social: {
       facebook: "https://facebook.com/johndoe",
       twitter: "https://twitter.com/johndoe",
@@ -23,9 +25,9 @@ const facultyAdvisorAndSponsor = [
     },
   },
   {
-    name: "Dr. Sandaruwan Gunasinghe",
-    position: "Senior Lecturer",
-    picture: Sineth,
+    name: "Dr. Damitha Sandaruwan",
+    position: "Faculty Advisor",
+    picture: SandaruwanSir,
     social: {
       facebook: "https://facebook.com/janesmith",
       twitter: "https://twitter.com/janesmith",
