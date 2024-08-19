@@ -21,59 +21,52 @@ const contactPerson = [
 
 export default function Contact() {
   return (
-    <>
-      <div className="py-16 text-white">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-12  bg-black">
-          Contact Us
-        </h1>
-
-        <div className="w-full flex flex-row justify-center items-center gap-8">
-          <div className="flex flex-col w-1/3 h-[450px] justify-center items-center rounded-lg p-10">
-            <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-left">
-              <b>Let`s Get In Touch</b>
-            </h1>
-            <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
-              <FaEnvelope className="w-6 h-6 text-secondary m-2" />
+    <div className="py-16 bg-black text-white">
+      <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 bg-black p-4 rounded-lg shadow-lg text-white">
+        Contact Us
+      </h1>
+      <div className="flex flex-col justify-center items-center w-full">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 px-4 w-4/5">
+          <div className="flex flex-col w-full sm:w-1/3 h-auto bg-gray-700 rounded-lg p-8 shadow-lg transform transition duration-500 hover:bg-gray-600">
+            <h2 className="text-2xl font-bold text-secondary mb-4">
+              Let’s Get In Touch
+            </h2>
+            <p className="text-base text-white mb-4 flex items-center gap-2">
+              <FaEnvelope className="w-6 h-6 text-secondary" />
               If you have any questions or would like to get in touch with us,
-              please feel free to contact us
+              please feel free to contact us.
             </p>
             <p className="text-base text-white mb-4 flex items-center gap-2">
-              <FaMapMarkerAlt className="w-6 h-6 text-secondary m-2" />
+              <FaMapMarkerAlt className="w-6 h-6 text-secondary" />
               ACM UCSC, University of Colombo School of Computing, 35, Reid
               Avenue, Colombo 7.
             </p>
-            <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
-              <FaEnvelope className="w-6 h-6 text-secondary m-2 pr-2" />
+            <p className="text-base text-white mb-4 flex items-center gap-2">
+              <FaEnvelope className="w-3 h-3 text-secondary" />
               acmucsc@gmail.com
             </p>
-            <p className="text-base text-white mb-4 flex items-center gap-2 w-full">
-              <FaPhoneAlt className="w-6 h-6 text-secondary m-2 pr-2" />
+            <p className="text-base text-white mb-4 flex items-center gap-2">
+              <FaPhoneAlt className="w-3 h-3 text-secondary" />
               +94 77 123 4567
             </p>
           </div>
-          <div className="flex flex-col w-1/3 h-[450px] justify-center items-center rounded-lg p-10">
-            {/* <h1 className="text-2xl font-bold text-secondary mb-12 w-full text-left">
-              <b>Contact Us</b>
-            </h1> */}
+
+          <div className="flex flex-col w-full sm:w-2/3 gap-6">
             {contactPerson.map((person, index) => (
               <div
                 key={index}
-                className="flex flex-col w-full justify-center items-center transform transition duration-500 cursor-pointer p-4 mb-2"
+                className="bg-gray-800 rounded-lg p-6 shadow-md transform transition duration-500 hover:bg-gray-700 flex flex-col items-start"
               >
-                <h1 className="text-1xl font-bold text-secondary text-right w-full">
+                <h2 className="text-xl font-bold text-secondary mb-2">
                   {person.name}
-                </h1>
-                <p className="text-base text-white text-right w-full">
-                  {person.position}
-                </p>
-                <p className="text-base text-white text-right w-full">
-                  {person.email}
-                </p>
+                </h2>
+                <p className="text-base text-white mb-1">{person.position}</p>
+                <p className="text-base text-white">{person.email}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -117,7 +117,7 @@ const committeeMembers = [
 
 export default function ExecutiveCommittee() {
   return (
-    <div className="py-16 bg-primary">
+    <div className="py-16 bg-black">
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
         Faculty Sponsor and Advisor
       </h1>
@@ -126,7 +126,7 @@ export default function ExecutiveCommittee() {
           {facultyAdvisorAndSponsor.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  transform hover:scale-105 m-4 min-w-[250px] min-h-[280px] cursor-pointer"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  transform  m-4 min-w-[250px] min-h-[280px] cursor-pointer"
             >
               <Image
                 src={member.picture}
@@ -191,7 +191,7 @@ export default function ExecutiveCommittee() {
           {committeeMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  hover:scale-105 min-w-[250px] min-h-[280px] cursor-pointer"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center  transform transition duration-500  transform  m-4 min-w-[250px] min-h-[280px] cursor-pointer"
             >
               <Image
                 src={member.picture}

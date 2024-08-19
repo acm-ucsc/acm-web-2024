@@ -4,52 +4,53 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="text-white py-6 px-6 flex flex-col justify-center items-center  bg-black">
-      <div className="container mx-auto flex flex-col justify-center items-center w-full p-10">
-        <Image src={logo} alt="ACM Logo" width={200} height={200} />
-        <div className="flex flex-col justify-center items-center md:items-start md:ml-10 mt-4 md:mt-0">
-            <h1 className="text-1xl font-bold text-center w-full">Association for Computing Machinery Student Chapter</h1>
-            <h1 className="text-1xl font-bold text-center w-full text-secondary">University of Colombo School of Computing</h1>
-          <div className="flex space-x-4 w-full justify-center items-center">
+    <footer className="bg-gradient-to-r from-black via-gray-800 to-black text-white py-10 px-6 flex flex-col items-center">
+      <div className="container mx-auto flex flex-col justify-center items-center md:items-start md:flex-row w-full p-6 md:p-10">
+        <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mb-6 md:mb-0">
+          <Image src={logo} alt="ACM Logo" width={150} height={150} />
+        </div>
+        <div className="flex flex-col items-center md:items-start md:ml-10 text-center md:text-left w-full md:w-2/3">
+          <h1 className="text-2xl md:text-2xl font-bold mb-2">Association for Computing Machinery Student Chapter</h1>
+          <h2 className="text-xl md:text-2xl font-semibold text-secondary mb-4">University of Colombo School of Computing</h2>
+          <div className="flex space-x-6 justify-center md:justify-start">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white p-2"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
-              <FaFacebook size={24} />
+              <FaFacebook size={20} />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white p-2"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
-              <FaTwitter size={24} />
+              <FaTwitter size={20} />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white p-2"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
-              <FaLinkedin size={24} />
+              <FaLinkedin size={20} />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white p-2"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
-              <FaInstagram size={24} />
+              <FaInstagram size={20} />
             </a>
           </div>
         </div>
       </div>
-
-      <hr className="border-t border-gray-700 w-3/4" />
-      <div className="pt-4 mt-8 text-center">
-        <p>&copy; {new Date().getFullYear()} ACM UCSC. All rights reserved.</p>
+      <hr className="border-t border-gray-600 w-3/4 my-6" />
+      <div className="text-center">
+        <p className="text-sm">&copy; {new Date().getFullYear()} ACM UCSC. All rights reserved.</p>
       </div>
     </footer>
   );

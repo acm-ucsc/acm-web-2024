@@ -13,7 +13,7 @@ import {
 export default function Hero() {
   return (
     <>
-      <div className="relative min-h-[600px] flex flex-col items-center justify-between p-24 overflow-hidden pb-40">
+      <div className="relative min-h-[600px] flex flex-col items-center justify-between p-24 overflow-hidden pb-40 bg-black opacity-50">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           autoPlay
@@ -21,7 +21,7 @@ export default function Hero() {
           muted
           playsInline
         >
-          <source src="/assets/videos/backgroundmp4.mp4" type="video/mp4" />
+          <source src="/assets/videos/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <main className="flex flex-col items-center justify-center h-auto p-24 relative z-10">
