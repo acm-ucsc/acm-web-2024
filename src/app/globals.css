@@ -32,5 +32,12 @@ body {
   }
 }
 
+.text-outline {
+  text-shadow: -2px -2px 0 #0f9fa0, 2px -2px 0 #0f9fa0, -2px 2px 0 #0f9fa0,
+    2px 2px 0 #000;
+}
 
 
+.text-outline2 {
+  text-shadow: -1px -1px 0 #fff;
+}

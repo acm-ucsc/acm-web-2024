@@ -55,7 +55,7 @@ const itemVariants = {
 
 export default function Timeline() {
   return (
-    <div className="flex flex-col items-center py-16 bg-black">
+    <div className="flex flex-col items-center py-16 bg-black" id="timeline">
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center w-full max-w-4xl">
         2024 Timeline
       </h1>

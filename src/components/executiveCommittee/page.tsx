@@ -126,7 +126,7 @@ const itemVariants = {
 
 export default function ExecutiveCommittee() {
   return (
-    <div className="py-16 bg-black">
+    <div id="team" className="py-16 bg-black">
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
         Faculty Sponsor and Advisor
       </h1>
