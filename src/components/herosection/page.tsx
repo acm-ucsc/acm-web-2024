@@ -13,7 +13,10 @@ import {
 export default function Hero() {
   return (
     <>
-      <div className="relative min-h-[600px] flex flex-col items-center justify-between p-24 overflow-hidden pb-40 bg-black opacity-50">
+      <div
+        id="home"
+        className="relative min-h-[600px] flex flex-col items-center justify-between p-24 overflow-hidden pb-40 bg-black opacity-50"
+      >
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           autoPlay
@@ -21,10 +24,7 @@ export default function Hero() {
           muted
           playsInline
         >
-          <source
-            src="../../../public/assets/videos/background.mp4"
-            type="video/mp4"
-          />
+          <source src="/assets/videos/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <main className="flex flex-col items-center justify-center h-auto p-24 relative z-10">
@@ -36,15 +36,16 @@ export default function Hero() {
               <Image src={ACMLogo} alt="ACM Logo" height={500} width={500} />
             </div>
           </div>
-          <h1 className="text-6xl text-white text-center mt-10 fire-animation shadow-md">
+          <h1 className="text-6xl text-white text-center mt-10 fire-animation shadow-md text-outline">
             <b>ACM Student Chapter - UCSC</b>
           </h1>
-          <h1 className="text-2xl text-secondary text-center mt-4 fire-animation">
+          <h1 className="text-2xl text-white text-center mt-4 fire-animation text-outline">
             <b>Association for Computing Machinery Student Chapter</b>
           </h1>
-          <h1 className="text-2xl text-secondary text-center fire-animation">
+          <h1 className="text-2xl text-secondary text-center fire-animation text-outline2">
             <b>University of Colombo School of Computing</b>
           </h1>
+
           <div className="flex flex-row items-center justify-center mt-10">
             <a href="https://facebook.com" className="text-white mx-2">
               <FaFacebookF size={20} />

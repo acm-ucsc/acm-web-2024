@@ -33,7 +33,7 @@ const activities = [
 
 export default function WhatACMDo(): ReactElement {
   return (
-    <div className="min-h-[750px] w-full bg-black py-16 px-4">
+    <div className="min-h-[750px] w-full bg-black py-16 px-4" id="events">
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center w-full max-w-4xl mx-auto">
         WHAT ACM UCSC DO
       </h1>

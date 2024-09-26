@@ -28,7 +28,7 @@ export default function About() {
 
   return (
     <>
-      <div className="h-auto flex flex-row justify-center items-center py-10 bg-black">
+      <div id="about" className="h-auto flex flex-row justify-center items-center py-10 bg-black">
         <div className="flex flex-col justify-center items-center w-1/2 p-10">
           <motion.h1
             className="text-4xl font-bold text-white mb-4 text-left w-4/5 animate-on-scroll"
