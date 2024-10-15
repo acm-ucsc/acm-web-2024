@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-51 flex flex-row items-center justify-between h-[60px] p-5 sm:p-10">
+    <div className="fixed top-0 left-0 right-0 z-50 flex flex-row items-center justify-between h-[60px] p-5 sm:p-10" style={{zIndex:100}}>
       {/* Logo */}
       <div className="text-xl font-bold">
         <Link href="/">
@@ -36,7 +36,7 @@ export default function Navbar() {
           <a
             key={link.href}
             href={link.href}
-            className="text-white hover:text-white transition duration-300 hover:text-secondary"
+            className="text-white hover:text-secondary transition duration-300"
           >
             <b>{link.label}</b>
           </a>
@@ -54,11 +54,19 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-40 sm:hidden"
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Navigation - Slide Menu */}
       <div
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } fixed top-0 right-0 w-2/3 h-full bg-gray-900 text-white p-6 flex flex-col space-y-4 transition-transform duration-300 ease-in-out sm:hidden`}
+        } fixed top-0 right-0 w-3/4 h-full bg-gray-900 text-white p-6 flex flex-col space-y-6 transition-transform duration-300 ease-in-out sm:hidden z-50`}
       >
         <button
           onClick={toggleMenu}
@@ -71,10 +79,10 @@ export default function Navbar() {
           <a
             key={link.href}
             href={link.href}
-            className="text-white hover:text-secondary text-lg"
+            className="text-lg font-semibold transition duration-300 transform hover:scale-105"
             onClick={toggleMenu}
           >
-            {link.label}
+            <h1 className="text-right text-white hover:text-white">{link.label}</h1>
           </a>
         ))}
       </div>
