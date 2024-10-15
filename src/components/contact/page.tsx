@@ -50,11 +50,11 @@ const ContactCard = ({ person }: ContactCardProps) => (
     exit="exit"
     viewport={{ once: true, amount: 0.2 }}
   >
-    <h2 className="text-xl font-bold text-secondary mb-2 text-center md:text-right">
+    <h2 className="text-xl font-bold text-secondary mb-2 text-center md:text-center">
       {person.name}
     </h2>
-    <p className="text-base text-white mb-1 text-center md:text-right">{person.position}</p>
-    <p className="text-base text-white text-center md:text-right">{person.email}</p>
+    <p className="text-base text-white mb-1 text-center md:text-center">{person.position}</p>
+    <p className="text-base text-white text-center md:text-center">{person.email}</p>
   </motion.div>
 );
 
@@ -111,7 +111,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact Person Cards */}
-          <div className="flex flex-col w-full sm:w-2/3 gap-6">
+          <div className="flex flex-row w-full sm:w-2/3 gap-6">
             {contactPerson.map((person, index) => (
               <ContactCard key={index} person={person} />
             ))}
