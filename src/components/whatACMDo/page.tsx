@@ -37,7 +37,7 @@ export default function WhatACMDo(): ReactElement {
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center w-full max-w-4xl mx-auto">
         WHAT ACM UCSC DO
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto w-3/4 md:w-full">
         {activities.map((activity, index) => (
           <FadeInSlideUp key={index} index={index} activity={activity} />
         ))}
@@ -92,14 +92,14 @@ const FadeInSlideUp = ({
       initial={{ opacity: 0, y: 50 }}
       animate={controls}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative bg-gray-800 p-6 rounded-lg shadow-lg cursor-pointer overflow-hidden transform transition duration-500 hover:scale-105"
+      className="relative bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg cursor-pointer overflow-hidden transform transition duration-500 hover:scale-105"
     >
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
       <div className="relative z-10">
-        <h1 className="text-2xl font-bold text-secondary mb-4 text-center">
+        <h1 className="text-xl sm:text-2xl font-bold text-secondary mb-2 text-center">
           {activity.title}
         </h1>
-        <p className="text-base text-white text-center">
+        <p className="text-sm sm:text-base text-white text-center">
           {activity.description}
         </p>
       </div>

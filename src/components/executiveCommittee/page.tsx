@@ -120,8 +120,8 @@ const committeeMembers = [
 ];
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 50, scale: 0.9 }, // Initial state with scale
-  visible: { opacity: 1, y: 0, scale: 1.1, transition: { duration: 0.6 } }, // Animated state with scale
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: { opacity: 1, y: 0, scale: 1.1, transition: { duration: 0.6 } },
 };
 
 export default function ExecutiveCommittee() {
@@ -130,23 +130,23 @@ export default function ExecutiveCommittee() {
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
         Faculty Sponsor and Advisor
       </h1>
-      <div className="w-full flex flex-col justify-center items-center mb-12">
-        <div className="flex flex-wrap justify-center px-4 w-3/4 mx-auto">
+      <div className="flex flex-col justify-center items-center mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 w-3/4 md:w-1/3">
           {facultyAdvisorAndSponsor.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer m-6 min-w-[250px] min-h-[280px]"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-6"
               variants={itemVariants}
-              whileInView="visible" // Trigger animation when the component is in view
+              whileInView="visible"
               initial="hidden"
-              viewport={{ once: true, amount: 0.2 }} // Adjusted viewport settings
+              viewport={{ once: true, amount: 0.2 }}
             >
               <Image
                 src={member.picture}
                 alt={member.name}
                 className="w-32 h-32 rounded-full mb-4 object-cover"
               />
-              <h2 className="text-1xl font-bold text-white mb-2">
+              <h2 className="text-xl sm:text-xl font-bold text-white mb-2 text-center">
                 {member.name}
               </h2>
               <p className="text-base text-gray-400 mb-4">{member.position}</p>
@@ -196,26 +196,27 @@ export default function ExecutiveCommittee() {
           ))}
         </div>
       </div>
+
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
         Executive Committee
       </h1>
       <div className="w-full flex flex-col justify-center items-center mb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 w-4/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-3/4 md:w-full max-w-screen-lg">
           {committeeMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer m-4 min-w-[250px] min-h-[280px]"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-6 w-full"
               variants={itemVariants}
-              whileInView="visible" // Trigger animation when the component is in view
+              whileInView="visible"
               initial="hidden"
-              viewport={{ once: true, amount: 0.2 }} // Adjusted viewport settings
+              viewport={{ once: true, amount: 0.2 }}
             >
               <Image
                 src={member.picture}
                 alt={member.name}
                 className="w-32 h-32 rounded-full mb-4 object-cover"
               />
-              <h2 className="text-1xl font-bold text-white mb-2">
+              <h2 className="text-xl sm:text-xl font-bold text-white mb-2 text-center">
                 {member.name}
               </h2>
               <p className="text-base text-gray-400 mb-4">{member.position}</p>
