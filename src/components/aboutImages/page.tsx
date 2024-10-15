@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import Image, { StaticImageData } from "next/image"; // Import StaticImageData
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 import img1 from "../../../public/assets/images/events/6.jpeg";
 import img2 from "../../../public/assets/images/events/7.jpeg";
@@ -12,6 +12,17 @@ import img6 from "../../../public/assets/images/events/16.jpeg";
 import img7 from "../../../public/assets/images/events/18.jpeg";
 import img8 from "../../../public/assets/images/events/19.jpeg";
 import img9 from "../../../public/assets/images/events/20.jpeg";
+
+interface ImageData {
+  src: StaticImageData; // Type for images imported with Next.js
+  name: string;
+  description: string;
+}
+
+interface ZoomInImageProps {
+  item: ImageData; // Use the defined type for the item prop
+  index: number; // Specify index as a number
+}
 
 // Define your image data array directly in this file
 const imageData = [
@@ -38,7 +49,7 @@ const imageData = [
   },
   {
     src: img5,
-    name: "Annual Genaral Meeting 2023",
+    name: "Annual General Meeting 2023",
     description: "",
   },
   {
@@ -54,7 +65,7 @@ const imageData = [
   },
   {
     src: img8,
-    name: "Twillio Session",
+    name: "Twilio Session",
     description: "",
   },
   {
@@ -65,62 +76,58 @@ const imageData = [
 ];
 
 export default function AboutImages() {
-  const controls = useAnimation();
-
-  // Function to handle scroll animation
-  const handleScroll = () => {
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        controls.start({ opacity: 1, y: 0 });
-      } else {
-        controls.start({ opacity: 0, y: 50 });
-      }
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Trigger scroll handler on component mount
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [controls]);
-
   return (
     <div className="p-6 bg-black">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {imageData.map((item, index) => (
-          <motion.div
-            key={index}
-            className={`relative overflow-hidden rounded-lg shadow-lg group transition-transform duration-500 ${
-              index % 5 === 0
-                ? "col-span-2 row-span-2"
-                : index % 4 === 0
-                ? "col-span-1 row-span-2"
-                : "col-span-1 row-span-1"
-            } animate-on-scroll`}
-            initial={{ opacity: 0, y: 50 }}
-            animate={controls}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-          >
-            <Image
-              src={item.src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              width={800}
-              height={600}
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-              <div className="text-white text-center transform translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
-                <p className="text-sm">{item.description}</p>
-              </div>
-            </div>
-          </motion.div>
+          <ZoomInImage key={index} item={item} index={index} />
         ))}
       </div>
     </div>
   );
 }
+
+// Create a separate component for the zoom-in effect
+const ZoomInImage = ({ item, index }: ZoomInImageProps) => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({ scale: 1, opacity: 1 });
+    } else {
+      controls.start({ scale: 0.9, opacity: 0 });
+    }
+  }, [controls, isInView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className={`relative overflow-hidden rounded-lg shadow-lg group transition-transform duration-500 ${
+        index % 5 === 0
+          ? "col-span-2 row-span-2"
+          : index % 4 === 0
+          ? "col-span-1 row-span-2"
+          : "col-span-1 row-span-1"
+      }`}
+      initial={{ scale: 0.9, opacity: 0 }}
+      animate={controls}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <Image
+        src={item.src}
+        alt={`Gallery image ${index + 1}`}
+        className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+        width={800}
+        height={600}
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+        <div className="text-white text-center transform translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+          <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
+          <p className="text-sm">{item.description}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
