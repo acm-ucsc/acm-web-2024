@@ -77,7 +77,7 @@ const imageData = [
 
 export default function AboutImages() {
   return (
-    <div className="p-6 bg-black">
+    <div className="p-6 bg-black" style={{zIndex:20}}>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {imageData.map((item, index) => (
           <ZoomInImage key={index} item={item} index={index} />
@@ -114,6 +114,7 @@ const ZoomInImage = ({ item, index }: ZoomInImageProps) => {
       initial={{ scale: 0.9, opacity: 0 }}
       animate={controls}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      style={{zIndex:20}}
     >
       <Image
         src={item.src}
