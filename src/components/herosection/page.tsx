@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import UCSCLogo from "../../../public/assets/images/ucsc-logo.png";
 import ACMLogo from "../../../public/assets/images/acm-logo-white.png";
@@ -10,6 +11,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import Navbar from "@/components/navbar/page";
+import { motion } from "framer-motion"; // Import motion
 
 export default function Hero() {
   return (
@@ -32,48 +34,73 @@ export default function Hero() {
         </video>
 
         {/* Main Content */}
-        <main className="flex flex-col items-center justify-center h-auto p-10 sm:p-24 relative"style={{zIndex:40}}>
+        <main className="flex flex-col items-center justify-center h-auto p-10 sm:p-24 relative" style={{ zIndex: 40 }}>
           {/* Logos */}
           <div className="flex flex-col sm:flex-row items-center justify-center w-full">
-            <div className="w-[150px] sm:w-1/2 flex flex-col items-center justify-center mb-8 sm:mb-0">
+            <motion.div
+              className="w-[150px] sm:w-1/2 flex flex-col items-center justify-center mb-8 sm:mb-0"
+              initial={{ scale: 0.9, opacity: 0 }} // Initial state
+              animate={{ scale: 1, opacity: 1 }} // Animate to this state
+              transition={{ duration: 0.5 }} // Duration of the animation
+            >
               <Image src={UCSCLogo} alt="UCSC Logo" height={150} width={150} />
-            </div>
-            <div className="w-[250px] sm:w-1/2 flex flex-col items-center justify-center">
+            </motion.div>
+            <motion.div
+              className="w-[250px] sm:w-1/2 flex flex-col items-center justify-center"
+              initial={{ scale: 0.9, opacity: 0 }} // Initial state
+              animate={{ scale: 1, opacity: 1 }} // Animate to this state
+              transition={{ duration: 0.5, delay: 0.2 }} // Duration of the animation with delay
+            >
               <Image src={ACMLogo} alt="ACM Logo" height={300} width={300} />
-            </div>
+            </motion.div>
           </div>
 
           {/* Heading Text */}
-          <h1 className="text-4xl sm:text-6xl text-white text-center mt-10 fire-animation shadow-md text-outline">
+          <motion.h1
+            className="text-4xl sm:text-6xl text-white text-center mt-10 fire-animation shadow-md"
+            initial={{ scale: 0.9, opacity: 0 }} // Initial state
+            animate={{ scale: 1, opacity: 1 }} // Animate to this state
+            transition={{ duration: 0.5, delay: 0.4 }} // Duration of the animation with delay
+          >
             <b>ACM Student Chapter - UCSC</b>
-          </h1>
-          <h1 className="text-lg sm:text-2xl text-white text-center mt-4 fire-animation text-outline">
+          </motion.h1>
+          <motion.h1
+            className="text-lg sm:text-2xl text-white text-center mt-4 fire-animation"
+            initial={{ scale: 0.9, opacity: 0 }} // Initial state
+            animate={{ scale: 1, opacity: 1 }} // Animate to this state
+            transition={{ duration: 0.5, delay: 0.6 }} // Duration of the animation with delay
+          >
             <b>Association for Computing Machinery Student Chapter</b>
-          </h1>
-          <h1 className="text-lg sm:text-2xl text-secondary text-center fire-animation text-outline2">
+          </motion.h1>
+          <motion.h1
+            className="text-lg sm:text-2xl text-white text-center fire-animation"
+            initial={{ scale: 0.9, opacity: 0 }} // Initial state
+            animate={{ scale: 1, opacity: 1 }} // Animate to this state
+            transition={{ duration: 0.5, delay: 0.8 }} // Duration of the animation with delay
+          >
             <b>University of Colombo School of Computing</b>
-          </h1>
+          </motion.h1>
 
           {/* Social Media Icons */}
           <div className="flex flex-row items-center justify-center mt-10 space-x-4">
-            <a href="https://facebook.com" className="text-white mx-2">
+            <motion.a href="https://facebook.com" className="text-white mx-2" whileHover={{ scale: 1.2 }}>
               <FaFacebookF size={20} />
-            </a>
-            <a href="https://twitter.com" className="text-white mx-2">
+            </motion.a>
+            <motion.a href="https://twitter.com" className="text-white mx-2" whileHover={{ scale: 1.2 }}>
               <FaTwitter size={20} />
-            </a>
-            <a href="https://linkedin.com" className="text-white mx-2">
+            </motion.a>
+            <motion.a href="https://linkedin.com" className="text-white mx-2" whileHover={{ scale: 1.2 }}>
               <FaLinkedinIn size={20} />
-            </a>
-            <a href="https://instagram.com" className="text-white mx-2">
+            </motion.a>
+            <motion.a href="https://instagram.com" className="text-white mx-2" whileHover={{ scale: 1.2 }}>
               <FaInstagram size={20} />
-            </a>
-            <a href="https://youtube.com" className="text-white mx-2">
+            </motion.a>
+            <motion.a href="https://youtube.com" className="text-white mx-2" whileHover={{ scale: 1.2 }}>
               <FaYoutube size={20} />
-            </a>
-            <a href="https://github.com" className="text-white mx-2">
+            </motion.a>
+            <motion.a href="https://github.com" className="text-white mx-2" whileHover={{ scale: 1.2 }}>
               <FaGithub size={20} />
-            </a>
+            </motion.a>
           </div>
         </main>
       </div>
