@@ -12,7 +12,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex flex-row items-center justify-between shadow-lg h-[60px] p-10 bg-black">
+    <div className="fixed top-0 left-0 right-0 z-50 flex flex-row items-center justify-between h-[60px] p-10">
       <div className="text-xl font-bold">
         <Link href="/">
           <Image src={logo} alt="ACM UCSC" height={100} width={100} />
