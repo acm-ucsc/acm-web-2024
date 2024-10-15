@@ -9,6 +9,7 @@ import {
   FaYoutube,
   FaGithub,
 } from "react-icons/fa";
+import Navbar from "@/components/navbar/page";
 
 export default function Hero() {
   return (
@@ -17,6 +18,7 @@ export default function Hero() {
         id="home"
         className="relative min-h-[600px] flex flex-col items-center justify-between p-24 overflow-hidden pb-40 bg-black opacity-50"
       >
+        <Navbar />
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           autoPlay

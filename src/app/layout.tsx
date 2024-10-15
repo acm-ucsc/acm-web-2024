@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/navbar/page";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -20,7 +19,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        <Navbar />
         {children}
       </body>
     </html>
