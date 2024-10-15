@@ -120,7 +120,7 @@ const TimelineEvent = ({ index, event }: TimelineEventProps) => {
       variants={itemVariants}
     >
       <div
-        className={`w-full sm:w-1/2 px-4 ${
+        className={`w-3/4 md:w-3/4 md:w-1/2 px-4 ${
           index % 2 === 0 ? "order-1" : "order-2"
         }`}
       >
@@ -144,3 +144,4 @@ const TimelineEvent = ({ index, event }: TimelineEventProps) => {
     </motion.div>
   );
 };
+

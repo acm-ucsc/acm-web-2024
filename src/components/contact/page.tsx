@@ -17,7 +17,7 @@ const contactPerson = [
   {
     name: "Vihanga Vithanawasam",
     position: "Secretary",
-    email: "vihangavithanawasam@gmail.com",
+    email: "vihanga123@gmail.com",
   },
 ];
 
@@ -43,16 +43,18 @@ interface ContactCardProps {
 // Reusable Contact Card component with typed props
 const ContactCard = ({ person }: ContactCardProps) => (
   <motion.div
-    className="bg-gray-800 rounded-lg p-6 shadow-md hover:bg-gray-700 transform transition duration-500"
+    className="rounded-lg p-6 shadow-md transform transition duration-500"
     variants={itemVariants}
     initial="hidden"
     whileInView="visible"
     exit="exit"
     viewport={{ once: true, amount: 0.2 }}
   >
-    <h2 className="text-xl font-bold text-secondary mb-2">{person.name}</h2>
-    <p className="text-base text-white mb-1">{person.position}</p>
-    <p className="text-base text-white">{person.email}</p>
+    <h2 className="text-xl font-bold text-secondary mb-2 text-center md:text-right">
+      {person.name}
+    </h2>
+    <p className="text-base text-white mb-1 text-center md:text-right">{person.position}</p>
+    <p className="text-base text-white text-center md:text-right">{person.email}</p>
   </motion.div>
 );
 
@@ -64,8 +66,8 @@ interface ContactDetailProps {
 
 // Reusable Contact Detail Component with typed props
 const ContactDetail = ({ icon, text }: ContactDetailProps) => (
-  <p className="text-base text-white mb-4 flex items-center gap-2">
-    {icon}
+  <p className="text-base text-white mb-4 flex items-center gap-2 text-center md:text-left">
+    {/* {icon} */}
     {text}
   </p>
 );
@@ -82,14 +84,14 @@ export default function Contact() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-4/5 mx-auto">
           {/* Contact Details */}
           <motion.div
-            className="w-full sm:w-1/3 bg-gray-700 rounded-lg p-8 shadow-lg hover:bg-gray-600 transform transition duration-500"
+            className="w-full sm:w-1/3 rounded-lg p-8 shadow-lg transform transition duration-500"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             exit="exit"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <h2 className="text-2xl font-bold text-secondary mb-4">
+            <h2 className="text-2xl font-bold text-secondary mb-4 text-center">
               Let’s Get In Touch
             </h2>
             <ContactDetail
@@ -100,14 +102,12 @@ export default function Contact() {
               icon={<FaMapMarkerAlt className="text-secondary" />}
               text="ACM UCSC, University of Colombo School of Computing, 35, Reid Avenue, Colombo 7."
             />
-            <ContactDetail
-              icon={<FaEnvelope className="text-secondary" />}
-              text="acmucsc@gmail.com"
-            />
-            <ContactDetail
-              icon={<FaPhoneAlt className="text-secondary" />}
-              text="+94 77 123 4567"
-            />
+            <p className="text-base text-white mb-4 text-center">
+              acmucsc@gmail.com
+            </p>
+            <p className="text-base text-white mb-4 text-center">
+              +94 77 123 4567
+            </p>
           </motion.div>
 
           {/* Contact Person Cards */}
