@@ -111,7 +111,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact Person Cards */}
-          <div className="flex flex-row w-full sm:w-2/3 gap-6">
+          <div className="flex flex-col md:flex-row w-full sm:w-2/3 gap-6">
             {contactPerson.map((person, index) => (
               <ContactCard key={index} person={person} />
             ))}
