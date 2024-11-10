@@ -23,6 +23,7 @@ const config: Config = {
         success: "#28a745",
         warning: "#ffc107",
         info: "#17a2b8",
+        white: "#ffffff",
       },
     },
   },
