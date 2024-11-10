@@ -38,7 +38,7 @@ export default function Navbar() {
           <a
             key={link.href}
             href={link.href}
-            className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-primary bg-white rounded-md w-[60px] !z-50"
+            className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-white rounded-md w-[60px] !z-50"
           >
             {link.label}
           </a>
@@ -83,7 +83,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-primary bg-white rounded-md w-[60px] !z-50"
+                className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-white w-[60px] !z-50"
                 onClick={toggleMenu}
                 style={{zIndex: 50}}
               >
