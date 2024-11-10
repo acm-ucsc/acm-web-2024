@@ -135,7 +135,7 @@ export default function ExecutiveCommittee() {
           {facultyAdvisorAndSponsor.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-6"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-3"
               variants={itemVariants}
               whileInView="visible"
               initial="hidden"
@@ -205,7 +205,7 @@ export default function ExecutiveCommittee() {
           {committeeMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-6 w-full"
+              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-2 w-full"
               variants={itemVariants}
               whileInView="visible"
               initial="hidden"

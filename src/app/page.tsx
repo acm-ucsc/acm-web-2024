@@ -5,10 +5,12 @@ import Timeline from "@/components/timeline/page";
 import ExecutiveCommittee from "@/components/executiveCommittee/page";
 import Contact from "@/components/contact/page";
 import Footer from "@/components/footer/page";
+import Navbar from "@/components/navbar/page";
 
 export default function Home() {
   return (
-    <>
+    <div className="z-20">
+      <Navbar />
       <Herosection />
       <About />
       <WhatACMDo />
@@ -16,6 +18,6 @@ export default function Home() {
       <ExecutiveCommittee />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
