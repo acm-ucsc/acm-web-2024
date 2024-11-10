@@ -1,5 +1,5 @@
 "use client";
-import Image, { StaticImageData } from "next/image"; // Import StaticImageData
+import Image, { StaticImageData } from "next/image";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -14,17 +14,16 @@ import img8 from "../../../public/assets/images/events/19.jpeg";
 import img9 from "../../../public/assets/images/events/20.jpeg";
 
 interface ImageData {
-  src: StaticImageData; // Type for images imported with Next.js
+  src: StaticImageData;
   name: string;
   description: string;
 }
 
 interface ZoomInImageProps {
-  item: ImageData; // Use the defined type for the item prop
-  index: number; // Specify index as a number
+  item: ImageData;
+  index: number;
 }
 
-// Define your image data array directly in this file
 const imageData = [
   {
     src: img1,
@@ -77,7 +76,7 @@ const imageData = [
 
 export default function AboutImages() {
   return (
-    <div className="p-6 bg-black" style={{zIndex:20}}>
+    <div className="p-6 pt-[80px]">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {imageData.map((item, index) => (
           <ZoomInImage key={index} item={item} index={index} />
@@ -87,7 +86,6 @@ export default function AboutImages() {
   );
 }
 
-// Create a separate component for the zoom-in effect
 const ZoomInImage = ({ item, index }: ZoomInImageProps) => {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -114,7 +112,6 @@ const ZoomInImage = ({ item, index }: ZoomInImageProps) => {
       initial={{ scale: 0.9, opacity: 0 }}
       animate={controls}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      style={{zIndex:20}}
     >
       <Image
         src={item.src}

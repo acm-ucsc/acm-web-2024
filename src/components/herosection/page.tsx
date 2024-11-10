@@ -20,7 +20,6 @@ export default function Hero() {
         id="home"
         className="relative min-h-[600px] flex flex-col items-center justify-between p-10 sm:p-24 overflow-hidden pb-20 sm:pb-40 bg-black opacity-50"
       >
-        <Navbar />
         {/* Background video */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"

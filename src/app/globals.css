@@ -41,3 +41,7 @@ body {
 .text-outline2 {
   text-shadow: -1px -1px 0 #fff;
 }
+
+.navbar{
+  z-index: 1000!important;
+}
