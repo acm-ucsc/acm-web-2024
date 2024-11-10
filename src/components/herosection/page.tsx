@@ -56,7 +56,7 @@ export default function Hero() {
 
           {/* Heading Text */}
           <motion.h1
-            className="text-2xl sm:text-6xl text-white text-center mt-10 fire-animation shadow-md"
+            className="text-2xl sm:text-6xl text-white text-center mt-10 fire-animation"
             initial={{ scale: 0.9, opacity: 0 }} // Initial state
             animate={{ scale: 1, opacity: 1 }} // Animate to this state
             transition={{ duration: 0.5, delay: 0.4 }} // Duration of the animation with delay

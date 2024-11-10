@@ -135,7 +135,7 @@ export default function ExecutiveCommittee() {
           {facultyAdvisorAndSponsor.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-3"
+              className="w-full p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-3"
               variants={itemVariants}
               whileInView="visible"
               initial="hidden"
@@ -156,7 +156,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-600 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaFacebook />
                   </a>
@@ -166,7 +166,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-400 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaTwitter />
                   </a>
@@ -176,7 +176,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-700 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaLinkedin />
                   </a>
@@ -186,7 +186,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-pink-500 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaInstagram />
                   </a>
@@ -205,7 +205,7 @@ export default function ExecutiveCommittee() {
           {committeeMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 hover:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-2 w-full"
+              className="p-6 rounded-lg shadow-lg flex flex-col items-center transform transition duration-500 cursor-pointer mb-2 w-full"
               variants={itemVariants}
               whileInView="visible"
               initial="hidden"
@@ -226,7 +226,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-600 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaFacebook />
                   </a>
@@ -236,7 +236,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-400 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaTwitter />
                   </a>
@@ -246,7 +246,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-700 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaLinkedin />
                   </a>
@@ -256,7 +256,7 @@ export default function ExecutiveCommittee() {
                     href={member.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-pink-500 transition-colors"
+                    className="text-white transition-colors"
                   >
                     <FaInstagram />
                   </a>
