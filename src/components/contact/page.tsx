@@ -66,7 +66,7 @@ interface ContactDetailProps {
 
 // Reusable Contact Detail Component with typed props
 const ContactDetail = ({ icon, text }: ContactDetailProps) => (
-  <p className="text-base text-white mb-4 flex items-center gap-2 text-center md:text-left">
+  <p className="text-base text-white mb-4 flex items-center gap-2 text-center md:text-center">
     {/* {icon} */}
     {text}
   </p>

@@ -60,7 +60,7 @@ export default function Timeline() {
         2024 Timeline
       </h1>
       <div className="relative w-full max-w-5xl">
-        <div className="border-l-4 border-secondary absolute h-full left-1/2 transform -translate-x-1/2"></div>
+        <div className="absolute h-full left-1/2 transform -translate-x-1/2"></div>
         <div className="flex flex-col items-center">
           {timelineEvents.map((event, index) => (
             <TimelineEvent key={index} index={index} event={event} />
