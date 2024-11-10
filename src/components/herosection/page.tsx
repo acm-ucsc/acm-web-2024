@@ -18,7 +18,7 @@ export default function Hero() {
     <>
       <div
         id="home"
-        className="relative min-h-[600px] flex flex-col items-center justify-between p-10 sm:p-24 overflow-hidden pb-20 sm:pb-40 bg-black opacity-50"
+        className="relative min-h-[600px] flex flex-col items-center justify-between p-10 sm:p-24 overflow-hidden pb-20 sm:pb-40"
       >
         {/* Background video */}
         <video

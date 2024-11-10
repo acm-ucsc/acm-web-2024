@@ -23,12 +23,12 @@ export default function Navbar() {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 !z-50 flex items-center justify-between h-[60px] p-5 sm:p-10 navbar"
+      className="fixed top-0 left-0 right-0 !z-50 flex items-center justify-between h-[60px] p-5 sm:p-10 navbar mt-2"
     >
       {/* Logo */}
       <div className="text-xl font-bold">
         <Link href="/">
-          <Image src={logo} alt="ACM UCSC" height={100} width={100} />
+          <Image src={logo} alt="ACM UCSC" height={120} width={170} />
         </Link>
       </div>
 
