@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../../../public/assets/images/acm-logo-white.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,19 +16,54 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > window.innerHeight) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  // Explicit types for the parameters
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+    const target = document.querySelector(href);
+
+    // Cast target to HTMLElement to access offsetTop
+    if (target && target instanceof HTMLElement) {
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: "smooth",
+      });
+    }
+    if (isOpen) {
+      toggleMenu();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
-      className="fixed top-0 left-0 right-0 !z-50 flex items-center justify-between h-[60px] p-5 sm:p-10 navbar mt-2"
+      className={`fixed top-0 left-0 right-0 !z-50 flex items-center justify-between h-[60px] p-5 sm:p-10 transition-colors duration-300 z-52 ${
+        scrolled ? "bg-black md:bg-black/80 md:backdrop-blur-md" : "bg-black md:bg-primary"
+      }`}
     >
       {/* Logo */}
       <div className="text-xl font-bold">
         <Link href="/">
-          <Image src={logo} alt="ACM UCSC" height={120} width={170} />
+          <Image src={logo} alt="ACM UCSC" height={85} width={120} />
         </Link>
       </div>
 
@@ -38,6 +73,7 @@ export default function Navbar() {
           <a
             key={link.href}
             href={link.href}
+            onClick={(e) => handleLinkClick(e, link.href)}
             className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-white rounded-md w-[60px] !z-50"
           >
             {link.label}
@@ -77,15 +113,14 @@ export default function Navbar() {
         >
           <FaTimes size={20} />
         </button>
-        <div className="flex flex-col justify-center items-end">
-          <div className="w-5/6 grid grid-cols-4 gap-4 p-2 rounded-md pr-4">
+        <div className="flex flex-col justify-center items-end bg-black">
+          <div className="w-full grid grid-cols-4 gap-4 rounded-md p-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
                 className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-white w-[60px] !z-50"
-                onClick={toggleMenu}
-                style={{zIndex: 50}}
               >
                 {link.label}
               </a>

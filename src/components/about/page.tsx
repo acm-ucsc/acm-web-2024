@@ -20,16 +20,18 @@ export default function About() {
           ABOUT US
         </h1>
         <p className="text-base sm:text-lg text-white text-center lg:text-left w-full lg:w-4/5">
-          The ACM UCSC is the student chapter of the Association for Computing
-          Machinery at the University of Colombo School of Computing. Comprised
-          of tech-savvy students, our group is dedicated to fostering a love for
-          technology and computing.
+          The ACM Student Chapter at the University of Colombo School of
+          Computing (UCSC) is a dynamic community of passionate, tech-driven
+          students committed to advancing knowledge in computing and technology.
+          As part of the global Association for Computing Machinery, we provide
+          a platform to explore cutting-edge technologies, collaborate on
+          innovative ideas, and build essential personal and professional
+          skills.
         </p>
         <p className="text-base sm:text-lg text-white mt-4 text-center lg:text-left w-full lg:w-4/5">
-          Engaging with our chapter not only advances technological expertise
-          but also hones essential personal development skills. Join us to be a
-          part of a vibrant community that supports both your technical and
-          personal growth.
+          Join us to be part of an inspiring network that nurtures technical
+          expertise and leadership, empowering you to thrive in the
+          ever-evolving computing world.
         </p>
       </motion.div>
 

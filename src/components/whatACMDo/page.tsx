@@ -7,12 +7,12 @@ const activities = [
   {
     title: "EVENTS",
     description:
-      "ACM UCSC hosts a variety of events throughout the year to help students enhance their skills and expand their knowledge in computing.",
+      "We host various events throughout the year to help students enhance their skills and expand their knowledge in computing.",
   },
   {
     title: "WORKSHOPS",
     description:
-      "We conduct workshops to provide students with the opportunity to learn new technologies and tools. Our workshops cover a wide range of topics.",
+      "We conduct workshops to allow students to learn new technologies and tools. Our workshops cover a wide range of topics.",
   },
   {
     title: "COMPETITIONS",
@@ -22,12 +22,12 @@ const activities = [
   {
     title: "MONTHLY MEETUPS",
     description:
-      "We conduct monthly meetups to provide students with the opportunity to connect with professionals and learn about the latest technological trends.",
+      "We conduct monthly meetups to allow students to connect with professionals and learn about the latest technological trends.",
   },
   {
-    title: "SEMINARS",
+    title: "MEMBER MEETUPS",
     description:
-      "We organize seminars on various topics related to computing and technology, bringing in experts to share their knowledge and insights.",
+      "We organize fun and interactive meetups to build friendships, foster teamwork, and develop leadership skills among members.",
   },
 ];
 
