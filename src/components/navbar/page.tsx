@@ -71,7 +71,7 @@ export default function Navbar() {
       {/* Logo - Mobile View */}
       <div
         className={`text-xl font-bold transition-all duration-500 ${
-          logoVisible ? "opacity-100" : "opacity-0"
+          logoVisible ? "opacity-100" : "opacity-100"
         } sm:opacity-100`} // Always visible in desktop view
       >
         <button onClick={scrollToTop}>
