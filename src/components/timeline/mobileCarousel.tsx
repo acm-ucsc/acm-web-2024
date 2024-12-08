@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import NOI_Image from "./NOI_2024/NOI_2024.jpg";
+import NOI_Image from "./NOI_2024/NOI_2024.png";
 import SIGCHI_Image from "./SIGCHI_2024/sigchi_2024.jpg";
 import ReidXtreme_Image from "./ReidXtream_2024/reid_xtreme2024.jpg";
 import Linux_Kickstart_Image from "./Monthly_Meetup_01-Linux_Kickstart/linux_kick_start.jpg";
