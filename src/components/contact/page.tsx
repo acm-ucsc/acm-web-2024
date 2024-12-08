@@ -49,8 +49,7 @@ export default function Contact() {
             icon={<FaMapMarkerAlt className="text-secondary" />}
             text="ACM UCSC, University of Colombo School of Computing, 35, Reid Avenue, Colombo 7."
           />
-          <p className="text-base text-white mb-4 text-center">acmucsc@gmail.com</p>
-          <p className="text-base text-white mb-4 text-center">+94 77 123 4567</p>
+          <p className="text-base text-white mb-4 text-center">ucscacmsc@gmail.com</p>
           <ContactDetail
             icon={<FaEnvelope className="text-secondary" />}
             text="Feel free to reach out – let’s shape the future of technology together!"
