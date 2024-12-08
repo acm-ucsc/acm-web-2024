@@ -20,10 +20,10 @@ const facultyAdvisorAndSponsor = [
     position: "Faculty Sponsor",
     picture: AjanthaSir,
     social: {
-      facebook: "https://facebook.com/johndoe",
-      twitter: "https://twitter.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      instagram: "https://instagram.com/johndoe",
+      facebook: "https://www.facebook.com/share/1AU3gbTRb7/?mibextid=LQQJ4d",
+      linkedin:
+        "https://www.linkedin.com/in/ajantha-atukorale-13043423b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      scholer: "https://scholar.google.com/citations?user=245C4lYAAAAJ",
     },
   },
   {
@@ -31,10 +31,10 @@ const facultyAdvisorAndSponsor = [
     position: "Faculty Advisor",
     picture: SandaruwanSir,
     social: {
-      facebook: "https://facebook.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-      instagram: "https://instagram.com/janesmith",
+      facebook: "https://www.facebook.com/share/1E5uJXgrbF/?mibextid=LQQJ4d",
+      linkedin:
+        "https://www.linkedin.com/in/damitha-sandaruwan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      scholer: "https://scholar.google.com/citations?user=KUt7bMUAAAAJ",
     },
   },
 ];
@@ -46,7 +46,6 @@ const committeeMembers = [
     picture: Samudi,
     social: {
       facebook: "https://facebook.com/johndoe",
-      twitter: "https://twitter.com/johndoe",
       linkedin: "https://linkedin.com/in/johndoe",
       instagram: "https://instagram.com/johndoe",
     },
@@ -57,7 +56,6 @@ const committeeMembers = [
     picture: Sineth,
     social: {
       facebook: "https://facebook.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
       instagram: "https://instagram.com/janesmith",
     },
@@ -68,7 +66,6 @@ const committeeMembers = [
     picture: Vihanga,
     social: {
       facebook: "https://facebook.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
       instagram: "https://instagram.com/janesmith",
     },
@@ -79,7 +76,6 @@ const committeeMembers = [
     picture: Dasun,
     social: {
       facebook: "https://facebook.com/johndoe",
-      twitter: "https://twitter.com/johndoe",
       linkedin: "https://linkedin.com/in/johndoe",
       instagram: "https://instagram.com/johndoe",
     },
@@ -90,7 +86,6 @@ const committeeMembers = [
     picture: Ravindu,
     social: {
       facebook: "https://facebook.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
       instagram: "https://instagram.com/janesmith",
     },
@@ -101,7 +96,6 @@ const committeeMembers = [
     picture: Gayandee,
     social: {
       facebook: "https://facebook.com/johndoe",
-      twitter: "https://twitter.com/johndoe",
       linkedin: "https://linkedin.com/in/johndoe",
       instagram: "https://instagram.com/johndoe",
     },
@@ -112,7 +106,6 @@ const committeeMembers = [
     picture: Kasun,
     social: {
       facebook: "https://facebook.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
       instagram: "https://instagram.com/janesmith",
     },
@@ -126,7 +119,7 @@ const itemVariants = {
 
 export default function ExecutiveCommittee() {
   return (
-    <div id="team" className="py-16 bg-black">
+    <div id="team" className="pt-16 bg-black">
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center mt-4">
         Faculty Sponsor <br className="md:hidden sm:block"></br> and Advisor
       </h1>
@@ -151,26 +144,6 @@ export default function ExecutiveCommittee() {
               </h2>
               <p className="text-base text-gray-400 mb-4">{member.position}</p>
               <div className="flex gap-4">
-                {member.social.facebook && (
-                  <a
-                    href={member.social.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white transition-colors"
-                  >
-                    <FaFacebook />
-                  </a>
-                )}
-                {member.social.twitter && (
-                  <a
-                    href={member.social.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white transition-colors"
-                  >
-                    <FaTwitter />
-                  </a>
-                )}
                 {member.social.linkedin && (
                   <a
                     href={member.social.linkedin}
@@ -181,14 +154,14 @@ export default function ExecutiveCommittee() {
                     <FaLinkedin />
                   </a>
                 )}
-                {member.social.instagram && (
+                {member.social.facebook && (
                   <a
-                    href={member.social.instagram}
+                    href={member.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white transition-colors"
                   >
-                    <FaInstagram />
+                    <FaFacebook />
                   </a>
                 )}
               </div>
@@ -198,7 +171,7 @@ export default function ExecutiveCommittee() {
       </div>
 
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
-        Executive <br className="md:hidden sm:block"></br>  Committee
+        Executive <br className="md:hidden sm:block"></br> Committee
       </h1>
       <div className="w-full flex flex-col justify-center items-center mb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-3/4 md:w-full max-w-screen-lg">
@@ -220,7 +193,7 @@ export default function ExecutiveCommittee() {
                 {member.name}
               </h2>
               <p className="text-base text-gray-400 mb-4">{member.position}</p>
-              <div className="flex gap-4">
+              {/* <div className="flex gap-4">
                 {member.social.facebook && (
                   <a
                     href={member.social.facebook}
@@ -229,16 +202,6 @@ export default function ExecutiveCommittee() {
                     className="text-white transition-colors"
                   >
                     <FaFacebook />
-                  </a>
-                )}
-                {member.social.twitter && (
-                  <a
-                    href={member.social.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white transition-colors"
-                  >
-                    <FaTwitter />
                   </a>
                 )}
                 {member.social.linkedin && (
@@ -261,7 +224,7 @@ export default function ExecutiveCommittee() {
                     <FaInstagram />
                   </a>
                 )}
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
