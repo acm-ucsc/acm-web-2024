@@ -11,6 +11,27 @@ import GitHub_Azure_Image from "./Monthly_Meetup_02-GitHub_and_Azure_Cloud/month
 
 const events = [
   {
+    title: "ReidXtream 2024",
+    description:
+      "ReidXtreme 3.0 is the premier competitive programming hackathon organized by the IEEE Student Branch of UCSC in collaboration with the ACM Student Chapter of UCSC.",
+    date: "7th September",
+    imageUrl: ReidXtreme_Image,
+  },
+  {
+    title: "Advanced GitHub and Azure Cloud - Monthly Meetup July",
+    description:
+      "Advanced GitHub and Azure Cloud - Monthly Meetup July is a hands-on workshop to learn advanced GitHub and Azure Cloud.",
+    date: "25th July",
+    imageUrl: GitHub_Azure_Image,
+  },
+  {
+    title: "Linux Kickstart: Hands-On Basics - Monthly Meetup June",
+    description:
+      "Linux Kickstart: Hands-On Basics - Monthly Meetup June is a hands-on workshop to learn the basics of Linux.",
+    date: "29th and 30th June",
+    imageUrl: Linux_Kickstart_Image,
+  },
+  {
     title: "NOI 2024",
     description:
       "NOI 2024 is the National Olympiad in Informatics, a prestigious programming competition for high school students in Sri Lanka.",
@@ -23,27 +44,6 @@ const events = [
       "Winter School by Colombo ACM SIGCHI Chapter: Connecting South Asia to collaborate and develop research interest in HCI.",
     date: "2nd, 3rd, and 4th January",
     imageUrl: SIGCHI_Image,
-  },
-  {
-    title: "ReidXtream 2024",
-    description:
-      "ReidXtreme 3.0 is the premier competitive programming hackathon organized by the IEEE Student Branch of UCSC in collaboration with the ACM Student Chapter of UCSC.",
-    date: "7th September",
-    imageUrl: ReidXtreme_Image,
-  },
-  {
-    title: "Linux Kickstart: Hands-On Basics - Monthly Meetup June",
-    description:
-      "Linux Kickstart: Hands-On Basics - Monthly Meetup June is a hands-on workshop to learn the basics of Linux.",
-    date: "29th and 30th June",
-    imageUrl: Linux_Kickstart_Image,
-  },
-  {
-    title: "Advanced GitHub and Azure Cloud - Monthly Meetup July",
-    description:
-      "Advanced GitHub and Azure Cloud - Monthly Meetup July is a hands-on workshop to learn advanced GitHub and Azure Cloud.",
-    date: "25th July",
-    imageUrl: GitHub_Azure_Image,
   },
 ];
 
