@@ -28,7 +28,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 bg-black text-white">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-white">
+        <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-white mt-8">
           Contact Us
         </h1>
         <motion.div

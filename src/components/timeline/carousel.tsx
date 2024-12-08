@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -43,10 +43,11 @@ const events = [
       "/assets/images/events/Monthly_Meetup_02-GitHub_and_Azure_Cloud/monthly_meetup_github_azure.jpg",
   },
 ];
+
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(4); // Default for larger screens
 
-  const itemsPerView = 4;
   const totalItems = events.length;
   const maxIndex = totalItems - itemsPerView;
 
@@ -54,6 +55,26 @@ const Carousel = () => {
     triggerOnce: true,
     threshold: 0.5,
   });
+
+  // Update itemsPerView based on screen size
+  const updateItemsPerView = () => {
+    if (window.innerWidth < 640) {
+      setItemsPerView(1); // Mobile view
+    } else if (window.innerWidth < 1024) {
+      setItemsPerView(2); // Tablet view
+    } else {
+      setItemsPerView(4); // Desktop view
+    }
+  };
+
+  // Handle window resize
+  useEffect(() => {
+    updateItemsPerView();
+    window.addEventListener("resize", updateItemsPerView);
+    return () => {
+      window.removeEventListener("resize", updateItemsPerView);
+    };
+  }, []);
 
   const handlePrevClick = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
@@ -76,8 +97,7 @@ const Carousel = () => {
           {events.map((event, index) => (
             <motion.div
               key={index}
-              className="flex-shrink-0 w-1/4 p-2"
-              style={{ minWidth: "25%" }}
+              className={`flex-shrink-0 w-full sm:w-1/2 md:w-1/4 p-2`}
               initial={{ opacity: 0 }}
               animate={{ opacity: inView ? 1 : 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -85,19 +105,24 @@ const Carousel = () => {
               <div className="card bg-primary shadow-md rounded-lg h-full">
                 <div className="relative w-full h-56">
                   <Image
-                    className="rounded-t-lg"
+                    className="rounded-t-lg object-cover" // Add object-cover to preserve aspect ratio
                     src={event.imageUrl}
                     alt={event.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    layout="fill"
+                    objectFit="cover" // Ensure the image doesn't stretch
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
                   />
                 </div>
                 <div className="p-4 flex flex-col h-full justify-center items-center">
                   <h5 className="text-xl text-white font-semibold text-center">
                     {event.title}
                   </h5>
-                  <p className="text-gray-500 text-1xl mt-2 flex-1 text-center">{event.description}</p>
-                  <p className="text-sm text-gray-500 mt-4 text-center">{event.date}</p>
+                  <p className="text-gray-500 text-1xl mt-2 flex-1 text-center">
+                    {event.description}
+                  </p>
+                  <p className="text-sm text-gray-500 mt-4 text-center">
+                    {event.date}
+                  </p>
                 </div>
               </div>
             </motion.div>

@@ -127,8 +127,8 @@ const itemVariants = {
 export default function ExecutiveCommittee() {
   return (
     <div id="team" className="py-16 bg-black">
-      <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
-        Faculty Sponsor and Advisor
+      <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center mt-4">
+        Faculty Sponsor <br className="md:hidden sm:block"></br> and Advisor
       </h1>
       <div className="flex flex-col justify-center items-center mb-12">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 w-3/4 md:w-1/3">
@@ -198,7 +198,7 @@ export default function ExecutiveCommittee() {
       </div>
 
       <h1 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">
-        Executive Committee
+        Executive <br className="md:hidden sm:block"></br>  Committee
       </h1>
       <div className="w-full flex flex-col justify-center items-center mb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-3/4 md:w-full max-w-screen-lg">

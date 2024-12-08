@@ -8,8 +8,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
+  { href: "#acm", label: "ACM" },
   { href: "#events", label: "Events" },
-  { href: "#timeline", label: "Timeline" },
   { href: "#team", label: "Team" },
   { href: "#contact", label: "Contact" },
 ];
@@ -17,25 +17,31 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [logoVisible, setLogoVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const handleScroll = () => {
-    if (window.scrollY > window.innerHeight) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
+    const scrollPosition = window.scrollY;
+    setScrolled(scrollPosition > window.innerHeight);
+    setLogoVisible(scrollPosition > window.innerHeight); // Hide logo when scrolled
   };
 
-  // Explicit types for the parameters
-  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     event.preventDefault();
     const target = document.querySelector(href);
-
-    // Cast target to HTMLElement to access offsetTop
     if (target && target instanceof HTMLElement) {
       window.scrollTo({
         top: target.offsetTop,
@@ -56,15 +62,21 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 !z-50 flex items-center justify-between h-[60px] p-5 sm:p-10 transition-colors duration-300 z-52 ${
-        scrolled ? "bg-black md:bg-black/80 md:backdrop-blur-md" : "bg-black md:bg-primary"
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-[60px] p-5 sm:p-10 transition-colors duration-300 ${
+        scrolled
+          ? "bg-primary md:bg-black/80 md:backdrop-blur-md"
+          : "bg-gradient-to-b from-black to-primary sm:bg-gradient-to-b sm:from-black sm:to-primary"
       }`}
     >
-      {/* Logo */}
-      <div className="text-xl font-bold">
-        <Link href="/">
+      {/* Logo - Mobile View */}
+      <div
+        className={`text-xl font-bold transition-all duration-500 ${
+          logoVisible ? "opacity-100" : "opacity-0"
+        } sm:opacity-100`} // Always visible in desktop view
+      >
+        <button onClick={scrollToTop}>
           <Image src={logo} alt="ACM UCSC" height={85} width={120} />
-        </Link>
+        </button>
       </div>
 
       {/* Navigation Links - Desktop */}
@@ -74,7 +86,7 @@ export default function Navbar() {
             key={link.href}
             href={link.href}
             onClick={(e) => handleLinkClick(e, link.href)}
-            className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-white rounded-md w-[60px] !z-50"
+            className="text-lg font-semibold text-white hover:text-secondary transition-colors"
           >
             {link.label}
           </a>
@@ -95,37 +107,36 @@ export default function Navbar() {
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-50 z-40 sm:hidden"
-          aria-hidden="true"
-        />
+          className="fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={toggleMenu}
+        ></div>
       )}
 
-      {/* Mobile Navigation - Drop-Down Menu */}
+      {/* Mobile Menu */}
       <div
-        className={`${
-          isOpen ? "translate-y-0" : "-translate-y-full"
-        } navbar fixed top-0 left-0 right-0 text-white p-4 flex flex-col space-y-2 transition-transform duration-300 ease-in-out sm:hidden z-50`}
+        className={`fixed top-0 right-0 h-full w-[60%] bg-primary z-40 flex flex-col items-center justify-between sm:hidden py-8 transform transition-all duration-300 ${
+          isOpen ? "translate-x-0 opacity-70" : "translate-x-full opacity-0"
+        }`}
       >
+        {/* Close Button */}
         <button
           onClick={toggleMenu}
-          className="text-white self-end"
+          className="absolute top-4 right-4 text-white text-2xl focus:outline-none"
           aria-label="Close Menu"
         >
-          <FaTimes size={20} />
+          <FaTimes size={25} />
         </button>
-        <div className="flex flex-col justify-center items-end bg-black">
-          <div className="w-full grid grid-cols-4 gap-4 rounded-md p-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-lg font-semibold transition duration-300 transform hover:scale-105 text-center text-sm text-white w-[60px] !z-50"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+        <div className="flex flex-col items-center space-y-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              className="text-lg font-semibold text-white hover:text-secondary transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
     </div>
