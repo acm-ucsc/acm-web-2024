@@ -16,7 +16,7 @@ export default function About() {
         transition={{ duration: 0.5 }} // Duration of the transition
         viewport={{ once: true }} // Animation only triggers once
       >
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center lg:text-left w-full lg:w-4/5">
+        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center lg:text-left w-full lg:w-4/5 mt-4">
           ABOUT US
         </h1>
         <p className="text-base sm:text-lg text-white text-center lg:text-left w-full lg:w-4/5">

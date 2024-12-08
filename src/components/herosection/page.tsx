@@ -48,7 +48,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={UCSCLogo} alt="UCSC Logo" width={150} height={150} />
+            <Image src={UCSCLogo} alt="UCSC Logo" width={140} height={140} />
           </Link>
         </motion.div>
         <motion.div
@@ -57,7 +57,7 @@ export default function Hero() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Image src={ACMLogo} alt="ACM Logo" width={250} height={250} />
+          <Image src={ACMLogo} alt="ACM Logo" width={220} height={220} />
         </motion.div>
       </div>
 
