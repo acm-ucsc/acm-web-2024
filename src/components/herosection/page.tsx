@@ -12,6 +12,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   const handleScroll = (
@@ -42,7 +43,13 @@ export default function Hero() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Image src={UCSCLogo} alt="UCSC Logo" width={150} height={150} />
+          <Link
+            href="https://ucsc.cmb.ac.lk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={UCSCLogo} alt="UCSC Logo" width={150} height={150} />
+          </Link>
         </motion.div>
         <motion.div
           className="flex items-center justify-center"
@@ -77,12 +84,23 @@ export default function Hero() {
       {/* Social Media Icons */}
       <div className="flex space-x-6 mt-8 cursor-pointer">
         {[
-          { href: "https://facebook.com", icon: <FaFacebookF /> },
-          { href: "https://twitter.com", icon: <FaTwitter /> },
-          { href: "https://linkedin.com", icon: <FaLinkedinIn /> },
-          { href: "https://instagram.com", icon: <FaInstagram /> },
-          { href: "https://youtube.com", icon: <FaYoutube /> },
-          { href: "https://github.com", icon: <FaGithub /> },
+          {
+            href: "https://www.facebook.com/share/14jTrd2BJoH/?mibextid=LQQJ4d",
+            icon: <FaFacebookF />,
+          },
+          {
+            href: "https://www.linkedin.com/company/ucscacmstudentchapter",
+            icon: <FaLinkedinIn />,
+          },
+          {
+            href: "https://www.instagram.com/ucsc.acm?igsh=MXJveG9pMGI2anpodw==",
+            icon: <FaInstagram />,
+          },
+          {
+            href: "https://youtube.com/@ucscacmsc?si=YmFrzzt0_G8icuZ7",
+            icon: <FaYoutube />,
+          },
+          { href: "https://github.com/acm-ucsc", icon: <FaGithub /> },
         ].map(({ href, icon }, idx) => (
           <motion.a
             key={idx}
