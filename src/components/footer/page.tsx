@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mb-6 md:mb-0">
           <Image src={logo} alt="ACM Logo" width={300} height={300} />
         </div>
-        <div className="flex flex-col items-right md:items-end md:ml-10 text-center md:text-left w-full md:w-2/3">
+        <div className="flex flex-col justify-center items-right md:items-end md:ml-10 text-center md:text-left w-full md:w-2/3 h-[160px]">
           <h1 className="text-1xl md:text-1xl font-bold mb-2">Association for Computing Machinery Student Chapter</h1>
           <h2 className="text-1xl md:text-1xl font-semibold text-secondary mb-4">University of Colombo School of Computing</h2>
           <div className="flex space-x-6 justify-center md:justify-start">
