@@ -17,7 +17,7 @@ interface ContactDetailProps {
 
 // Reusable Contact Detail Component with typed props
 const ContactDetail = ({ icon, text }: ContactDetailProps) => (
-  <p className="text-base text-white mb-4 flex items-center gap-2 justify-center">
+  <p className="text-base text-white mb-4 flex items-center gap-2 justify-center flex flex-col md:flex-row text-center">
     {icon}
     {text}
   </p>
@@ -40,20 +40,16 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-2xl font-bold text-white mb-4 text-center">Let`s Connect!</h2>
-
-          <ContactDetail
-            icon={<FaEnvelope className="text-secondary" />}
-            text="Do you have questions or want to collaborate with us? We’d love to hear from you!"
-          />
+          <p className="text-base text-white mb-4 text-center">Do you have questions or want to collaborate with us? We’d love to hear from you!</p>
           <ContactDetail
             icon={<FaMapMarkerAlt className="text-secondary" />}
             text="ACM UCSC, University of Colombo School of Computing, 35, Reid Avenue, Colombo 7."
           />
-          <p className="text-base text-white mb-4 text-center">ucscacmsc@gmail.com</p>
           <ContactDetail
             icon={<FaEnvelope className="text-secondary" />}
-            text="Feel free to reach out – let’s shape the future of technology together!"
+            text="ucscacmsc@gmail.com"
           />
+          <p className="text-base text-white mb-4 text-center">Feel free to reach out – let’s shape the future of technology together!</p>
         </motion.div>
       </div>
     </section>

@@ -72,7 +72,7 @@ export default function Hero() {
           Association for Computing Machinery Student Chapter
         </motion.h1>
         <motion.h3
-          className="text-md sm:text-2xl mt-2 text-[#FF3529]"
+          className="text-md sm:text-2xl mt-2 text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
