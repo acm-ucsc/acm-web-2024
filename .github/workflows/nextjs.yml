@@ -65,14 +65,12 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-      # Make sure to run next export to generate the static output
-      - name: Export static site
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      # No need for next export here anymore, as it's handled by the config
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out  # Ensure this is the directory where your static export files are located
+          path: ./dist  # Make sure this is the directory where your static export files are located
 
   deploy:
     environment:
