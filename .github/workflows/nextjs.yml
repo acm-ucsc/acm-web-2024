@@ -75,3 +75,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Ensure the correct branch and directory are specified here
+          publish_branch: gh-pages  # Make sure this matches the branch you're deploying to
+          publish_dir: ./dist  # Make sure this is the correct directory for the static files
