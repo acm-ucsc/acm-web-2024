@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-b from-primary via-secondary to-black text-white flex flex-col items-center justify-center p-8 sm:p-16 relative overflow-hidden"
+      className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 sm:p-16 relative overflow-hidden"
     >
       {/* Logo Section */}
       <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-12 mt-10">
@@ -64,7 +64,7 @@ export default function Hero() {
       {/* Heading Section */}
       <div className="text-center mt-8">
         <motion.h1
-          className="text-2xl sm:text-3xl font-bold text-white"
+          className="text-2xl sm:text-3xl font-bold text-secondary"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
