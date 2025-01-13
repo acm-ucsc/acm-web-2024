@@ -1,6 +1,6 @@
 import logo from "../../../public/assets/images/acm-logo-white.png";
 import Image from "next/image";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
           <h2 className="text-1xl md:text-1xl font-semibold text-secondary mb-4">University of Colombo School of Computing</h2>
           <div className="flex space-x-6 justify-center md:justify-start">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/14jTrd2BJoH/?mibextid=LQQJ4d"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -22,15 +22,15 @@ const Footer = () => {
               <FaFacebook size={20} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://youtube.com/@ucscacmsc?si=YmFrzzt0_G8icuZ7"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-300"
             >
-              <FaTwitter size={20} />
+              <FaYoutube size={20} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/ucscacmstudentchapter"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -38,7 +38,7 @@ const Footer = () => {
               <FaLinkedin size={20} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/ucsc.acm?igsh=MXJveG9pMGI2anpodw=="
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-300"
