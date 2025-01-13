@@ -30,8 +30,10 @@ jobs:
         run: npm ci
 
       # Step 4: Build and Export with Next.js
-      - name: Export with Next.js
-        run: npm run export
+      - name: Build and Export with Next.js
+        run: |
+          npm run build
+          npm run export
 
       # Step 5: Clone Target Repository
       - name: Clone Target Repository
@@ -44,7 +46,7 @@ jobs:
       # Step 6: Copy Build Files to Target Repository
       - name: Copy Build Files
         run: |
-          cp -r out/* target-repo/
+          cp -r dist/* target-repo/
 
       # Step 7: Deploy to Target Repository
       - name: Deploy to Target Repository
@@ -60,5 +62,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          publish_branch: gh-pages # Replace with the branch where GitHub Pages is configured
-          publish_dir: ./dist      # Replace with the directory containing your static files
+          publish_branch: gh-pages
+          publish_dir: ./dist  # Use the correct directory where static files are located
