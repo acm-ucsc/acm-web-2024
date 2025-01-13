@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Pages
+name: Deploy Build and Exported Files
 
 on:
   push:
@@ -6,76 +6,59 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "${{ github.workspace }}/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
-
+      # Step 2: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: "npm"
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-
+      # Step 3: Install dependencies
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: npm ci
 
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      # Step 4: Build and Export with Next.js
+      - name: Export with Next.js
+        run: npm run export
 
-      - name: Upload static site artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist  # The directory where Next.js exports the static files (defined in next.config.mjs)
+      # Step 5: Clone Target Repository
+      - name: Clone Target Repository
+        run: |
+          git clone https://github.com/acm-ucsc/acm-web-ucsc.io.git target-repo
+          rm -rf target-repo/*
+        env:
+          GIT_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+      # Step 6: Copy Build Files to Target Repository
+      - name: Copy Build Files
+        run: |
+          cp -r out/* target-repo/
+
+      # Step 7: Deploy to Target Repository
+      - name: Deploy to Target Repository
+        run: |
+          cd target-repo
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Deploy build files from source repository"
+          git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/acm-ucsc/acm-web-ucsc.io.git
+
+      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
         with:
-          # Ensure the correct branch and directory are specified here
-          publish_branch: gh-pages  # Make sure this matches the branch you're deploying to
-          publish_dir: ./dist  # Make sure this is the correct directory for the static files
+          publish_branch: gh-pages # Replace with the branch where GitHub Pages is configured
+          publish_dir: ./dist      # Replace with the directory containing your static files
