@@ -73,7 +73,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "Deploy build files from source repository"
+          git commit --allow-empty -m "Deploy build files from source repository"  # Force commit even if no changes
           git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/acm-ucsc/acm-web-ucsc.io.git
 
       # Step 10: Deploy to GitHub Pages
