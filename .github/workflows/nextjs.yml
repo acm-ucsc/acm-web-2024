@@ -29,11 +29,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Build with Next.js (No need to run export explicitly)
+      # Step 4: Build with Next.js
       - name: Build with Next.js
         run: npm run build
 
-      # Step 5: Clone Target Repository
+      # Step 5: Create a Build Artifact
+      - name: Create build artifact
+        run: |
+          mkdir -p build
+          cp -r .next/ out/ public/ build/
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: build/
+
+      # Step 6: Clone Target Repository
       - name: Clone Target Repository
         run: |
           git clone https://github.com/acm-ucsc/acm-web-ucsc.io.git target-repo
@@ -41,12 +52,18 @@ jobs:
         env:
           GIT_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
-      # Step 6: Copy Build Files to Target Repository
+      # Step 7: Download the Build Artifact
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+
+      # Step 8: Copy Build Files to Target Repository
       - name: Copy Build Files
         run: |
-          cp -r dist/* target-repo/
+          cp -r build/* target-repo/
 
-      # Step 7: Deploy to Target Repository
+      # Step 9: Deploy to Target Repository
       - name: Deploy to Target Repository
         run: |
           cd target-repo
@@ -56,9 +73,8 @@ jobs:
           git commit -m "Deploy build files from source repository"
           git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/acm-ucsc/acm-web-ucsc.io.git
 
-      # Step 8: Deploy to GitHub Pages
+      # Step 10: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          publish_branch: gh-pages
-          publish_dir: ./dist  # Use the correct directory where static files are located
+          token: ${{ secrets.PERSONAL_TOKEN }}
