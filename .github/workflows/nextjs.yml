@@ -34,7 +34,7 @@ jobs:
 
       # Step 4: Build with Next.js
       - name: Build with Next.js
-        run: npm run build
+        run: npm run export
         
       # Step 5: Create a Build Artifact
       - name: Create build artifact
