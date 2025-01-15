@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://ucscacm.org", // Update to your actual domain
     images: [
       {
-        url: "/assets/images/acm-ucsc-logo-social.jpg", // Add a social share image
+        url: "https://ucscacm.org/assets/images/acm-ucsc-logo-social.jpg", // Add a social share image
         width: 600,
         height: 350,
         alt: "UCSC ACM Student Chapter",
