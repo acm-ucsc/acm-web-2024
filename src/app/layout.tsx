@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description:
     "Join the UCSC ACM Student Chapter, a vibrant community at the University of Colombo School of Computing (UCSC), promoting knowledge in computing and technology. Explore cutting-edge innovations, collaborate, and develop professional skills.",
   keywords: [
+    "ACM",
+    "UCSC",
     "ACM Student Chapter",
     "UCSC",
     "University of Colombo School of Computing",
