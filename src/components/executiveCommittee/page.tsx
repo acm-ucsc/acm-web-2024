@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Samudi from "../../../public/assets/images/team/Samudi.jpg";
-import Sineth from "../../../public/assets/images/team/Sineth.jpg";
-import Dasun from "../../../public/assets/images/team/Dasun.jpg";
-import Vihanga from "../../../public/assets/images/team/Vihanga.jpg";
-import Ravindu from "../../../public/assets/images/team/Ravindu.jpg";
-import Gayandee from "../../../public/assets/images/team/Gayandee.jpg";
-import Kasun from "../../../public/assets/images/team/Kasun.jpg";
+import Viduranga from "../../../public/assets/images/team/Viduranga.jpg";
+import Dineth from "../../../public/assets/images/team/Dineth.jpg";
+import Senesh from "../../../public/assets/images/team/Senesh.jpeg";
+import Sasanka from "../../../public/assets/images/team/Sasanka.jpg";
+import Thisam from "../../../public/assets/images/team/Thisam.jpg";
+import Theekshana from "../../../public/assets/images/team/Theekshana.jpeg";
+import Ramesh from "../../../public/assets/images/team/Ramesh.jpeg";
 import SandaruwanSir from "../../../public/assets/images/team/Dr. Sanadaruwan.png";
 import AjanthaSir from "../../../public/assets/images/team/Dr.-Ajantha Athukorale.jpg";
 
@@ -41,9 +41,9 @@ const facultyAdvisorAndSponsor = [
 
 const committeeMembers = [
   {
-    name: "Samudi Perera",
+    name: " Viduranga Landers ",
     position: "Chairperson",
-    picture: Samudi,
+    picture: Viduranga,
     social: {
       facebook: "https://facebook.com/johndoe",
       linkedin: "https://linkedin.com/in/johndoe",
@@ -51,9 +51,9 @@ const committeeMembers = [
     },
   },
   {
-    name: "Sineth Dhananjaya",
+    name: "Dineth Palliyaguru",
     position: "Vice President",
-    picture: Sineth,
+    picture: Dineth,
     social: {
       facebook: "https://facebook.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
@@ -61,9 +61,9 @@ const committeeMembers = [
     },
   },
   {
-    name: "Vihanga Vithanawasam",
+    name: "Sasanka Wakista",
     position: "Secretary",
-    picture: Vihanga,
+    picture: Sasanka,
     social: {
       facebook: "https://facebook.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
@@ -71,9 +71,9 @@ const committeeMembers = [
     },
   },
   {
-    name: "Dasun Thathsara",
+    name: "Senesh Gamage",
     position: "Membership Chair",
-    picture: Dasun,
+    picture: Senesh,
     social: {
       facebook: "https://facebook.com/johndoe",
       linkedin: "https://linkedin.com/in/johndoe",
@@ -81,9 +81,9 @@ const committeeMembers = [
     },
   },
   {
-    name: "Ravindu Hasanka",
+    name: "Thisum Dinujaya",
     position: "Treasurer",
-    picture: Ravindu,
+    picture: Thisam,
     social: {
       facebook: "https://facebook.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
@@ -91,9 +91,9 @@ const committeeMembers = [
     },
   },
   {
-    name: "Gayandee Rajapaksha",
+    name: "Theekshana Dissanayake",
     position: "Design Master",
-    picture: Gayandee,
+    picture: Theekshana,
     social: {
       facebook: "https://facebook.com/johndoe",
       linkedin: "https://linkedin.com/in/johndoe",
@@ -101,9 +101,9 @@ const committeeMembers = [
     },
   },
   {
-    name: "Kasun Udara",
+    name: "Ramesh Peshala",
     position: "Web Master",
-    picture: Kasun,
+    picture: Ramesh,
     social: {
       facebook: "https://facebook.com/janesmith",
       linkedin: "https://linkedin.com/in/janesmith",
