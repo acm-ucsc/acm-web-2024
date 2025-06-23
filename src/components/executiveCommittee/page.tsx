@@ -12,6 +12,10 @@ import Ramesh from "../../../public/assets/images/team/Ramesh.jpeg";
 import SandaruwanSir from "../../../public/assets/images/team/Dr. Sanadaruwan.png";
 import AjanthaSir from "../../../public/assets/images/team/Dr.-Ajantha Athukorale.jpg";
 
+//fix error
+
+
+
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const facultyAdvisorAndSponsor = [
@@ -26,6 +30,7 @@ const facultyAdvisorAndSponsor = [
       scholer: "https://scholar.google.com/citations?user=245C4lYAAAAJ",
     },
   },
+  
   {
     name: "Dr. Damitha Sandaruwan",
     position: "Faculty Advisor",
