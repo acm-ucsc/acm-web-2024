@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Viduranga from "../../../public/assets/images/team/Viduranga.jpg";
+import Viduranga from "../../../public/assets/images/team/viduranga.jpg";
 import Dineth from "../../../public/assets/images/team/Dineth.jpg";
-import Senesh from "../../../public/assets/images/team/Senesh.jpeg";
+import Senesh from "../../../public/assets/images/team/senesh.jpeg";
 import Sasanka from "../../../public/assets/images/team/Sasanka.jpg";
-import Thisam from "../../../public/assets/images/team/Thisam.jpg";
+import Thisam from "../../../public/assets/images/team/thisam.jpg";
 import Theekshana from "../../../public/assets/images/team/Theekshana.jpeg";
-import Ramesh from "../../../public/assets/images/team/Ramesh.jpeg";
+import Ramesh from "../../../public/assets/images/team/ramesh.jpeg";
 import SandaruwanSir from "../../../public/assets/images/team/Dr. Sanadaruwan.png";
 import AjanthaSir from "../../../public/assets/images/team/Dr.-Ajantha Athukorale.jpg";
 
