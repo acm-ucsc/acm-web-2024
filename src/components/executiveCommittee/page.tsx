@@ -3,20 +3,18 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Viduranga from "../../../public/assets/images/team/Viduranga.jpg";
-import Dineth from "../../../public/assets/images/team/Dineth.jpg";
-import Senesh from "../../../public/assets/images/team/Senesh.jpeg";
-import Sasanka from "../../../public/assets/images/team/Sasanka.jpg";
-import Thisam from "../../../public/assets/images/team/Thisam.jpg";
-import Theekshana from "../../../public/assets/images/team/Theekshana.jpeg";
-import Ramesh from "../../../public/assets/images/team/Ramesh.jpeg";
-import SandaruwanSir from "../../../public/assets/images/team/Dr. Sanadaruwan.png";
-import AjanthaSir from "../../../public/assets/images/team/Dr.-Ajantha Athukorale.jpg";
-
-//fix error
+import Dineth from "../../../public/assets/images/team/Dineth.webp";
+import Senesh from "../../../public/assets/images/team/Senesh.webp";
+import Sasanka from "../../../public/assets/images/team/Sasanka.webp";
+import Thisam from "../../../public/assets/images/team/Thisam.webp";
+import Theekshana from "../../../public/assets/images/team/Theekshana.webp";
+import Ramesh from "../../../public/assets/images/team/Ramesh.webp";
+import SandaruwanSir from "../../../public/assets/images/team/Dr.-Sanadaruwan.webp";
+import AjanthaSir from "../../../public/assets/images/team/Dr.-Ajantha-Athukorale.webp";
 
 
 
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 
 const facultyAdvisorAndSponsor = [
   {
@@ -49,71 +47,37 @@ const committeeMembers = [
     name: " Viduranga Landers ",
     position: "Chairperson",
     picture: Viduranga,
-    social: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      instagram: "https://instagram.com/johndoe",
-    },
   },
   {
     name: "Dineth Palliyaguru",
     position: "Vice President",
     picture: Dineth,
-    social: {
-      facebook: "https://facebook.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-      instagram: "https://instagram.com/janesmith",
-    },
+
   },
   {
     name: "Sasanka Wakista",
     position: "Secretary",
     picture: Sasanka,
-    social: {
-      facebook: "https://facebook.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-      instagram: "https://instagram.com/janesmith",
-    },
   },
   {
     name: "Senesh Gamage",
     position: "Membership Chair",
     picture: Senesh,
-    social: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      instagram: "https://instagram.com/johndoe",
-    },
   },
   {
     name: "Thisum Dinujaya",
     position: "Treasurer",
     picture: Thisam,
-    social: {
-      facebook: "https://facebook.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-      instagram: "https://instagram.com/janesmith",
-    },
   },
   {
     name: "Theekshana Dissanayake",
     position: "Design Master",
     picture: Theekshana,
-    social: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      instagram: "https://instagram.com/johndoe",
-    },
   },
   {
     name: "Ramesh Peshala",
     position: "Web Master",
     picture: Ramesh,
-    social: {
-      facebook: "https://facebook.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-      instagram: "https://instagram.com/janesmith",
-    },
   },
 ];
 
@@ -198,38 +162,6 @@ export default function ExecutiveCommittee() {
                 {member.name}
               </h2>
               <p className="text-base text-gray-400 mb-4">{member.position}</p>
-              {/* <div className="flex gap-4">
-                {member.social.facebook && (
-                  <a
-                    href={member.social.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white transition-colors"
-                  >
-                    <FaFacebook />
-                  </a>
-                )}
-                {member.social.linkedin && (
-                  <a
-                    href={member.social.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white transition-colors"
-                  >
-                    <FaLinkedin />
-                  </a>
-                )}
-                {member.social.instagram && (
-                  <a
-                    href={member.social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white transition-colors"
-                  >
-                    <FaInstagram />
-                  </a>
-                )}
-              </div> */}
             </motion.div>
           ))}
         </div>
