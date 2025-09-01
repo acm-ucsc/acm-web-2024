@@ -9,9 +9,25 @@ import SIGCHI_Image from "./SIGCHI_2024/sigchi_2024.jpg";
 import ReidXtreme_Image from "./ReidXtream_2024/reid_xtreme2024.jpg";
 import Linux_Kickstart_Image from "./Monthly_Meetup_01-Linux_Kickstart/linux_kick_start.jpg";
 import GitHub_Azure_Image from "./Monthly_Meetup_02-GitHub_and_Azure_Cloud/monthly_meetup_github_azure.jpg";
+import Project_Verse_Image from "./Monthly_Meetup_03-Project_Verse/monthly_Meetup_project_verse.jpeg";
+import ACM_Introductory_Image from "./ACM_Introductory_Session/acm_introductory_session.jpeg";
 
 
 const events = [
+  {
+    title: "ACM Introductory Session 2025",
+    description:
+      "The ACM Introductory Session is an event aimed at welcoming new members and introducing them to the ACM community.",
+    date: "27th August 2025",
+    imageUrl: ACM_Introductory_Image,
+  },
+  {
+    title: "Project Verse 1.0 - Monthly Meetup July 2025",
+    description:
+      "Project Verse 1.0 - Monthly Meetup July 2025 is a hands-on workshop to learn about Project Verse, a new way to collaborate on projects.",
+    date: "24th July 2025",
+    imageUrl: Project_Verse_Image,
+  },
   {
     title: "ReidXtream 2024",
     description:
@@ -20,7 +36,7 @@ const events = [
     imageUrl: ReidXtreme_Image,
   },
   {
-    title: "Advanced GitHub and Azure Cloud - Monthly Meetup July",
+    title: "Advanced GitHub and Azure Cloud - Monthly Meetup July 2024",
     description:
       "Advanced GitHub and Azure Cloud - Monthly Meetup July is a hands-on workshop to learn advanced GitHub and Azure Cloud.",
     date: "25th July",
