@@ -50,7 +50,7 @@ const committeeMembers = [
   },
   {
     name: "Dineth Palliyaguru",
-    position: "Vice President",
+    position: "Vice Chairperson",
     picture: Dineth,
 
   },
@@ -61,7 +61,7 @@ const committeeMembers = [
   },
   {
     name: "Senesh Gamage",
-    position: "Membership Chair",
+    position: "Membership Chairperson",
     picture: Senesh,
   },
   {
