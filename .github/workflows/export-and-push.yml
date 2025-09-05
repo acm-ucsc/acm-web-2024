@@ -1,0 +1,63 @@
+name: Build static and push to Repo acm-ucsc/acm-web-2024-deployed
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo acm-ucsc/acm-web-2024
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build (static export to ./out)
+        run: npm run build
+
+      - name: Push to Repo acm-ucsc/acm-web-2024-deployed
+        env:
+          TARGET_REPO: acm-ucsc/acm-web-2024-deployed
+          TARGET_BRANCH: main
+          TARGET_REPO_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          : "${TARGET_REPO:?}"
+          : "${TARGET_BRANCH:?}"
+          : "${TARGET_REPO_TOKEN:?}"
+
+          WORKDIR=$(mktemp -d)
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # shallow clone target
+          git clone --depth 1 "https://x-access-token:${TARGET_REPO_TOKEN}@github.com/${TARGET_REPO}.git" "$WORKDIR"
+
+          # wipe everything except .git
+          find "$WORKDIR" -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+
+          # copy static export
+          rsync -a --delete ./out/ "$WORKDIR/"
+
+          cd "$WORKDIR"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update static export from Repo A (${GITHUB_SHA})"
+            git push origin "${TARGET_BRANCH}"
+          fi
