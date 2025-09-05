@@ -36,28 +36,36 @@ jobs:
           TARGET_REPO_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }}
         run: |
           set -euo pipefail
-          : "${TARGET_REPO:?}"
-          : "${TARGET_BRANCH:?}"
-          : "${TARGET_REPO_TOKEN:?}"
+          : "${TARGET_REPO:?}"; : "${TARGET_BRANCH:?}"; : "${TARGET_REPO_TOKEN:?}"
 
           WORKDIR=$(mktemp -d)
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # shallow clone target
+          # Clone target (may be empty)
           git clone --depth 1 "https://x-access-token:${TARGET_REPO_TOKEN}@github.com/${TARGET_REPO}.git" "$WORKDIR"
 
-          # wipe everything except .git
-          find "$WORKDIR" -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
-
-          # copy static export
-          rsync -a --delete ./out/ "$WORKDIR/"
-
           cd "$WORKDIR"
+
+          # If repo is empty (no HEAD/branch), create the target branch
+          if ! git rev-parse --verify "$TARGET_BRANCH" >/dev/null 2>&1; then
+            # no branch exists yet -> create it
+            git checkout -b "$TARGET_BRANCH"
+          else
+            git checkout "$TARGET_BRANCH"
+          fi
+
+          # (Optional) Only wipe if not empty; safe to keep this, but you can remove it.
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+
+          # Copy export from Repo A
+          rsync -a --delete "$GITHUB_WORKSPACE/out/" "$WORKDIR/"
+
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "chore: update static export from Repo A (${GITHUB_SHA})"
-            git push origin "${TARGET_BRANCH}"
+            exit 0
           fi
+
+          git commit -m "chore: update static export from Repo A (${GITHUB_SHA})"
+          git push -u origin "$TARGET_BRANCH"
