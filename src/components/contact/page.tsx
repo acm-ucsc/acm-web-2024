@@ -49,7 +49,7 @@ export default function Contact() {
             icon={<FaEnvelope className="text-secondary" />}
             text="ucscacmsc@gmail.com"
           />
-          <p className="text-base text-white mb-4 text-center">Feel free to reach out – let’s shape the future of technology together!</p>
+          <p className="text-base text-white mb-4 text-center">Feel free to reach out – let’s shape the future of technology together.</p>
         </motion.div>
       </div>
     </section>
