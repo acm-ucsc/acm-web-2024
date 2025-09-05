@@ -52,11 +52,11 @@ jobs:
             git checkout "$TARGET_BRANCH"
           fi
 
-          # wipe everything except .git to make a clean mirror
-          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+          # keep .git and .github
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".github" -exec rm -rf {} +
 
-          # copy export; DO NOT delete .git
-          rsync -a --exclude '.git' "$GITHUB_WORKSPACE/out/" "$WORKDIR/"
+          # mirror /out but never touch .git/.github
+          rsync -a --delete --exclude='.git' --exclude='.github' "$GITHUB_WORKSPACE/out/" "$WORKDIR/"
 
           git add -A
           if git diff --cached --quiet; then
