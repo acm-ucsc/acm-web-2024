@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+concurrency:
+  group: static-export
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
