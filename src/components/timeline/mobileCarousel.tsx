@@ -9,9 +9,19 @@ import Linux_Kickstart_Image from "./Monthly_Meetup_01-Linux_Kickstart/linux_kic
 import GitHub_Azure_Image from "./Monthly_Meetup_02-GitHub_and_Azure_Cloud/monthly_meetup_github_azure.jpg";
 import Project_Verse_Image from "./Monthly_Meetup_03-Project_Verse/monthly_Meetup_project_verse.jpeg";
 import ACM_Introductory_Image from "./ACM_Introductory_Session/acm_introductory_session.jpeg";
+import Qiskit_Fall_Fest_Image from "./Qiskit_Fall_Fest_2025/qiskit_fall_fest_2025.png";
 
 
 const events = [
+  {
+    title: "Qiskit Fall Fest 2025",
+    description:
+      "Join us for an exciting quantum computing workshop and hackathon featuring IBM Qiskit. Learn quantum programming and compete in quantum challenges.",
+    date: "October 2025 - Ongoing",
+    imageUrl: Qiskit_Fall_Fest_Image,
+    isOngoing: true,
+    websiteUrl: "https://ucsc.acm.org/qiskitfallfest",
+  },
   {
     title: "ACM Introductory Session 2025",
     description:
@@ -65,33 +75,79 @@ const events = [
 
 const MobileCarousel = () => {
   return (
+    <>
+      <style jsx>{`
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 3s ease-in-out infinite;
+        }
+      `}</style>
     <div className="max-w-7xl mx-auto mt-8 space-y-4 p-8">
       {events.map((event, index) => (
-        <div key={index} className="card bg-primary shadow-md rounded-lg mb-4">
-          <div className="relative w-full h-56">
+        <div key={index} className={`card shadow-xl rounded-xl mb-6 relative overflow-hidden transform transition-all duration-300 hover:scale-102 ${
+          event.isOngoing 
+            ? 'bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 border-2 border-purple-300 shadow-purple-500/50 hover:shadow-purple-500/70 hover:shadow-2xl animate-pulse-slow' 
+            : 'bg-primary hover:shadow-lg'
+        }`}>
+          {event.isOngoing && (
+            <div className="absolute top-3 right-3 bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-2 rounded-full text-xs font-bold animate-bounce shadow-lg z-10 border border-white/20">
+              ⚡ LIVE NOW
+            </div>
+          )}
+          <div className="relative w-full h-64 overflow-hidden">
             <Image
-              className="rounded-t-lg object-cover"
+              className="rounded-t-xl object-cover transition-transform duration-500 hover:scale-110"
               src={event.imageUrl}
               alt={event.title}
               layout="fill"
               objectFit="cover"
               sizes="(max-width: 640px) 100vw"
             />
+            {event.isOngoing && (
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
+            )}
           </div>
-          <div className="p-4 flex flex-col h-full justify-center items-center">
-            <h5 className="text-xl text-white font-semibold text-center">
+          <div className="p-6 flex flex-col h-full justify-center items-center">
+            <h5 className={`text-2xl font-bold text-center mb-4 leading-tight transition-colors duration-300 ${
+              event.isOngoing ? 'text-white drop-shadow-lg' : 'text-white'
+            }`}>
               {event.title}
             </h5>
-            <p className="text-gray-500 text-1xl mt-2 flex-1 text-center">
+            <p className={`text-base mt-2 flex-1 text-center leading-relaxed ${
+              event.isOngoing ? 'text-purple-100' : 'text-gray-400'
+            }`}>
               {event.description}
             </p>
-            <p className="text-sm text-white mt-4 text-center">
+            <p className={`text-sm mt-4 text-center font-semibold ${
+              event.isOngoing ? 'text-purple-100 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm' : 'text-white'
+            }`}>
               {event.date}
             </p>
+            {event.websiteUrl && (
+              <div className="mt-6">
+                <button
+                  onClick={() => {
+                    console.log('Mobile button clicked! Opening:', event.websiteUrl);
+                    window.open(event.websiteUrl, '_blank');
+                  }}
+                  className={`px-8 py-4 rounded-xl font-bold text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${
+                    event.isOngoing 
+                      ? 'bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-gray-900 border-2 border-white/20' 
+                      : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  }`}
+                >
+                  🚀 Join Event
+                </button>
+              </div>
+            )}
           </div>
         </div>
       ))}
     </div>
+    </>
   );
 };
 
